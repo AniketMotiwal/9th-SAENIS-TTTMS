@@ -199,7 +199,7 @@ export default function Hero3D() {
           <p className="text-lg sm:text-2xl md:text-3xl font-bold text-cyan-100 mb-8 drop-shadow-lg max-w-3xl mx-auto tracking-wide leading-relaxed">
             Emerging Thermal Technologies
           </p>
-          <div className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-transparent border-0 mb-6 backdrop-blur-none">
+          <div className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500/70 to-purple-500/70 border-2 border-cyan-300 mb-6 backdrop-blur-md shadow-xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 hover:scale-105">
             <p className="text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-lg">
               📅 December 3-5, 2026
             </p>
