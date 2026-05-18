@@ -6,8 +6,10 @@ import Schedule from '@/components/Schedule';
 import OrganizingCommittee from '@/components/OrganizingCommittee';
 import AdvisoryBoard from '@/components/AdvisoryBoard';
 import Patrons from '@/components/Patrons';
+import SaeIndiaImageSection from '@/components/SaeIndiaImageSection';
 import Register from '@/components/Register';
 import Footer from '@/components/Footer';
+import ScrollControls from '@/components/ScrollControls';
 import PageWrapper from '@/components/PageWrapper';
 
 export default function Home() {
@@ -25,7 +27,8 @@ export default function Home() {
         {/* Content wrapper */}
         <div className="relative z-10">
         <Header />
-        
+        <ScrollControls />
+
         {/* Hero Section */}
         <section id="hero">
           <Hero3D />
@@ -48,6 +51,20 @@ export default function Home() {
 
         {/* Patrons Section */}
         <Patrons />
+
+        {/* SAEINDIA — Mentors */}
+        <SaeIndiaImageSection
+          id="mentors"
+          title="Mentors"
+          imageSrc="/sareindia/Mentros-TTTMS25.png"
+        />
+
+        {/* SAEINDIA — OC Members */}
+        <SaeIndiaImageSection
+          id="oc-members"
+          title="OC Members"
+          imageSrc="/sareindia/OC Members-TTTMS25.png"
+        />
 
         {/* Register Section */}
         <Register />

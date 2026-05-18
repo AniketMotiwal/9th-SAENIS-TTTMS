@@ -5,29 +5,38 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import SaeIndiaLogo from '@/components/SaeIndiaLogo';
+import { NAV_LINKS, SECTION_IDS, SCROLL_SPY_OFFSET } from '@/lib/sections';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('hero');
 
   useEffect(() => {
-    const handleScroll = () => {
+    const updateScrollState = () => {
       setIsScrolled(window.scrollY > 50);
+
+      const scrollPosition = window.scrollY + SCROLL_SPY_OFFSET;
+      let current = SECTION_IDS[0];
+
+      for (const id of SECTION_IDS) {
+        const section = document.getElementById(id);
+        if (section && section.offsetTop <= scrollPosition) {
+          current = id;
+        }
+      }
+
+      setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    updateScrollState();
+    window.addEventListener('scroll', updateScrollState, { passive: true });
+    window.addEventListener('resize', updateScrollState);
+    return () => {
+      window.removeEventListener('scroll', updateScrollState);
+      window.removeEventListener('resize', updateScrollState);
+    };
   }, []);
-
-  const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Theme', href: '#theme' },
-    { name: 'Schedule', href: '#schedule' },
-    { name: 'Organizing Committee', href: '#organizing' },
-    { name: 'Advisory Board', href: '#advisory' },
-    { name: 'Patrons', href: '#patrons' },
-  ];
 
   return (
     <header
@@ -37,9 +46,9 @@ export default function Header() {
           : 'bg-black/55 backdrop-blur-sm'
       }`}
     >
-      <nav className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 h-[6.5rem] sm:h-[8.5rem] flex items-center gap-4 lg:gap-8">
-        {/* Left — IIT logo */}
-        <div className="flex-shrink-0 animate-anti-gravity">
+      <nav className="w-full px-3 sm:px-5 lg:px-6 xl:px-8 h-[6.5rem] sm:h-[8.5rem] flex lg:grid lg:grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-4 lg:gap-4 xl:gap-6">
+        {/* Left — IIT logo (flush left on desktop) */}
+        <div className="flex shrink-0 justify-start animate-anti-gravity">
           <div className="relative h-[4.5rem] w-[4.5rem] sm:h-[6.5rem] sm:w-[6.5rem] lg:h-32 lg:w-32">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iit_logo-eieQN2fUkXi1NU7FlB4FxOBYyZpsn0.webp"
@@ -52,22 +61,35 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Center — navigation */}
-        <div className="hidden min-w-0 flex-1 lg:flex lg:justify-center">
-          <nav className="flex flex-nowrap items-center justify-center">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="nav-link whitespace-nowrap text-xs xl:text-sm">
+        {/* Center — navigation fills space between logos */}
+        <div className="hidden lg:flex w-full min-w-0 items-center justify-self-stretch px-2 xl:px-4">
+          <div className="flex w-full flex-nowrap items-center justify-evenly">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`nav-link nav-link-desktop whitespace-nowrap ${
+                  activeSection === link.id ? 'nav-link-active' : ''
+                }`}
+                aria-current={activeSection === link.id ? 'page' : undefined}
+              >
                 {link.name}
               </Link>
             ))}
-            <Link href="#register" className="btn-register ml-1 whitespace-nowrap px-4 py-2 text-xs xl:text-sm xl:px-5">
+            <Link
+              href="#register"
+              className={`btn-register btn-register-desktop shrink-0 whitespace-nowrap ${
+                activeSection === 'register' ? 'btn-register-active' : ''
+              }`}
+              aria-current={activeSection === 'register' ? 'page' : undefined}
+            >
               Register
             </Link>
-          </nav>
+          </div>
         </div>
 
-        {/* Right — SAEINDIA branding */}
-        <div className="ml-auto flex flex-shrink-0 items-center gap-2 sm:gap-3">
+        {/* Right — SAEINDIA branding (flush right on desktop) */}
+        <div className="ml-auto lg:ml-0 flex shrink-0 items-center justify-end gap-2 sm:gap-3 justify-self-end">
           <SaeIndiaLogo className="animate-anti-gravity-delayed" />
 
           <button
@@ -87,20 +109,28 @@ export default function Header() {
       {isOpen && (
         <div className="border-t border-cyan-500/20 bg-black/95 backdrop-blur-md lg:hidden">
           <div className="space-y-1 px-4 py-4">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block rounded-lg px-4 py-2.5 text-gray-200 transition-colors duration-200 hover:bg-white/5 hover:text-cyan-400"
+                className={`block rounded-lg px-4 py-2.5 transition-colors duration-200 hover:bg-white/5 hover:text-cyan-400 ${
+                  activeSection === link.id
+                    ? 'bg-cyan-500/10 text-cyan-300 border-l-2 border-cyan-400'
+                    : 'text-gray-200'
+                }`}
                 onClick={() => setIsOpen(false)}
+                aria-current={activeSection === link.id ? 'page' : undefined}
               >
                 {link.name}
               </Link>
             ))}
             <Link
               href="#register"
-              className="btn-register mt-2 block text-center"
+              className={`btn-register mt-2 block text-center ${
+                activeSection === 'register' ? 'btn-register-active' : ''
+              }`}
               onClick={() => setIsOpen(false)}
+              aria-current={activeSection === 'register' ? 'page' : undefined}
             >
               Register
             </Link>
