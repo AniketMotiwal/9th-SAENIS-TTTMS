@@ -281,3 +281,7 @@
 .animate-thermal-pulse {
   animation: thermal-pulse 1.5s ease-in-out infinite;
 }
+
+.bg-mandala-texture {
+  background-image: url('/patterns/mandala.svg');
+}

@@ -10,7 +10,7 @@ export default function OrganizingCommittee() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_55%)]" />
 
           {/* Mandala texture */}
-          <div className="absolute inset-0 opacity-[0.06] bg-[url('/patterns/mandala.svg')] bg-cover bg-center" />
+          <div className="absolute inset-0 opacity-[0.06] bg-mandala-texture bg-cover bg-center" />
 
           {/* Content */}
           <div className="relative z-10">
