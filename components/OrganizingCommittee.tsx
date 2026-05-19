@@ -8,21 +8,21 @@ const committee = [
     affiliation: 'IIT Roorkee',
     department: 'Department of Mechanical and Industrial Engineering',
     image: '/Organzing-commitee/1.png',
-    imageClass: 'object-contain p-1',
+
   },
   {
     name: 'Prof. Varun Sharma',
     affiliation: 'IIT Roorkee',
     department: 'Department of Mechanical and Industrial Engineering',
     image: '/Organzing-commitee/2.png',
-    imageClass: 'object-contain p-1',
+
   },
   {
     name: 'Prof. Amit Choudhary',
     affiliation: 'IIT Roorkee',
     department: 'Department of Mechanical and Industrial Engineering',
     image: '/Organzing-commitee/3.png',
-    imageClass: 'object-cover object-[center_20%] scale-110',
+
   },
 ];
 
@@ -46,14 +46,13 @@ export default function OrganizingCommittee() {
               key={member.name}
               className="group flex flex-col items-center text-center bg-gradient-to-br from-slate-900/80 to-slate-800/60 border-2 border-cyan-500/40 rounded-2xl p-8 hover:border-cyan-400/80 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
             >
-              <div className="relative h-44 w-44 overflow-hidden rounded-full border-2 border-cyan-500/60 bg-slate-900 shadow-[0_0_24px_rgba(34,211,238,0.2)] group-hover:border-cyan-400/90 group-hover:shadow-[0_0_32px_rgba(34,211,238,0.35)] transition-all duration-300">
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl bg-gradient-to-b from-slate-900 to-slate-800 border border-cyan-500/40">
                 <Image
                   src={member.image}
                   alt={member.name}
-                  width={176}
-                  height={176}
-                  unoptimized
-                  className={`h-full w-full transition-transform duration-300 group-hover:scale-110 ${member.imageClass}`}
+                  fill
+                  priority={member.name === 'Prof. Akshay Dwivedi'}
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
@@ -61,7 +60,7 @@ export default function OrganizingCommittee() {
                 {member.name}
               </h3>
               <p className="mt-1 text-sm font-semibold text-purple-400">{member.affiliation}</p>
-              <p className="mt-3 text-sm text-gray-400 leading-relaxed">{member.department}</p>
+              <p className="mt-3 text-sm text-white leading-relaxed whitespace-nowrap">{member.department}</p>
             </article>
           ))}
         </div>

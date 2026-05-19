@@ -5,19 +5,19 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import SaeIndiaLogo from '@/components/SaeIndiaLogo';
-import { NAV_LINKS, SECTION_IDS, SCROLL_SPY_OFFSET } from '@/lib/sections';
+import { NAV_LINKS, SECTION_IDS, SCROLL_SPY_OFFSET, SectionId } from '@/lib/sections';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('hero');
+  const [activeSection, setActiveSection] = useState<SectionId>('hero');
 
   useEffect(() => {
     const updateScrollState = () => {
       setIsScrolled(window.scrollY > 50);
 
       const scrollPosition = window.scrollY + SCROLL_SPY_OFFSET;
-      let current = SECTION_IDS[0];
+      let current: SectionId = SECTION_IDS[0];
 
       for (const id of SECTION_IDS) {
         const section = document.getElementById(id);
