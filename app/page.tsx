@@ -1,12 +1,16 @@
 import Header from '@/components/Header';
-import Hero3D from '@/components/Hero3D';
+import dynamic from 'next/dynamic';
+const Hero3D = dynamic(() => import('@/components/Hero3D'), { ssr: false });
 import About from '@/components/About';
 import Theme from '@/components/Theme';
 import Schedule from '@/components/Schedule';
 import OrganizingCommittee from '@/components/OrganizingCommittee';
-import AdvisoryBoard from '@/components/AdvisoryBoard';
-import Patrons from '@/components/Patrons';
+
+const AdvisoryBoard = dynamic(() => import('@/components/AdvisoryBoard'), { ssr: false });
+const Patrons = dynamic(() => import('@/components/Patrons'), { ssr: false });
 import SaeIndiaImageSection from '@/components/SaeIndiaImageSection';
+import Glimpses from '@/components/Glimpses';
+import Venue from '@/components/Venue';
 import Register from '@/components/Register';
 import Footer from '@/components/Footer';
 import ScrollControls from '@/components/ScrollControls';
@@ -46,25 +50,31 @@ export default function Home() {
         {/* Organizing Committee Section */}
         <OrganizingCommittee />
 
-        {/* Advisory Board Section */}
+        {/* Who Should Attend */}
         <AdvisoryBoard />
 
-        {/* Patrons Section */}
+        {/* Sponsorship Opportunities */}
         <Patrons />
 
-        {/* SAEINDIA — Mentors */}
+        {/* Mentors — 9th SAENIS */}
         <SaeIndiaImageSection
           id="mentors"
           title="Mentors"
-          imageSrc="/sareindia/Mentros-TTTMS25.png"
+          imageSrc="/sareindia/Mentors9th.png?v=2"
         />
 
-        {/* SAEINDIA — OC Members */}
+        {/* OC Members — 9th TTTMS’26 */}
         <SaeIndiaImageSection
           id="oc-members"
           title="OC Members"
-          imageSrc="/sareindia/OC Members-TTTMS25.png"
+          imageSrc="/sareindia/OC-Members-TTTMS26.png?v=1"
         />
+
+        {/* Glimpses from Past Editions */}
+        <Glimpses />
+
+        {/* Venue at a Glance */}
+        <Venue />
 
         {/* Register Section */}
         <Register />

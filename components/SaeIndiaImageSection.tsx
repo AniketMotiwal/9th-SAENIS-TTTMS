@@ -27,8 +27,11 @@ export default function SaeIndiaImageSection({ id, title, imageSrc }: SaeIndiaIm
           <Image
             src={imageSrc}
             alt={`${title} — 9th SAENIS TTTMS International Conference 2026 (SAEINDIA)`}
-            width={1920}
-            height={1920}
+            width={3840}
+            height={3840}
+            quality={100}
+            priority
+            unoptimized
             className="h-auto w-full object-contain"
             sizes="(max-width: 1024px) 100vw, 1024px"
           />

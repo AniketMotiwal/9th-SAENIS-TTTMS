@@ -1,7 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import LoaderScreen from './LoaderScreen';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the heavy 3D loader to avoid server-side bundling
+const LoaderScreen = dynamic(() => import('./LoaderScreen'), { ssr: false });
 
 interface PageWrapperProps {
   children: React.ReactNode;

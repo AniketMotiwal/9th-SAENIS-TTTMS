@@ -8,6 +8,8 @@ export const SECTION_IDS = [
   'patrons',
   'mentors',
   'oc-members',
+  'glimpses',
+  'venue',
   'register',
 ] as const;
 
@@ -19,10 +21,12 @@ export const NAV_LINKS: { name: string; href: string; id: SectionId }[] = [
   { name: 'Theme', href: '#theme', id: 'theme' },
   { name: 'Schedule', href: '#schedule', id: 'schedule' },
   { name: 'Organizing Committee', href: '#organizing', id: 'organizing' },
-  { name: 'Advisory Board', href: '#advisory', id: 'advisory' },
-  { name: 'Patrons', href: '#patrons', id: 'patrons' },
+  { name: 'Who Should Attend', href: '#advisory', id: 'advisory' },
+  { name: 'Sponsorship', href: '#patrons', id: 'patrons' },
   { name: 'Mentors', href: '#mentors', id: 'mentors' },
   { name: 'OC Members', href: '#oc-members', id: 'oc-members' },
+  { name: 'Glimpses', href: '#glimpses', id: 'glimpses' },
+  { name: 'Venue', href: '#venue', id: 'venue' },
 ];
 
 /** Fixed header height — scroll-spy offset */

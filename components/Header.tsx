@@ -7,6 +7,9 @@ import Image from 'next/image';
 import SaeIndiaLogo from '@/components/SaeIndiaLogo';
 import { NAV_LINKS, SECTION_IDS, SCROLL_SPY_OFFSET, SectionId } from '@/lib/sections';
 
+const REGISTRATION_URL =
+  'https://saenis.glueup.com/event/9th-saenis-tttms-international-conference-2026-189169/';
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,15 +79,14 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="#register"
-              className={`btn-register btn-register-desktop shrink-0 whitespace-nowrap ${
-                activeSection === 'register' ? 'btn-register-active' : ''
-              }`}
-              aria-current={activeSection === 'register' ? 'page' : undefined}
+            <a
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-register btn-register-desktop shrink-0 whitespace-nowrap"
             >
               Register
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -124,16 +126,15 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="#register"
-              className={`btn-register mt-2 block text-center ${
-                activeSection === 'register' ? 'btn-register-active' : ''
-              }`}
+            <a
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-register mt-2 block text-center"
               onClick={() => setIsOpen(false)}
-              aria-current={activeSection === 'register' ? 'page' : undefined}
             >
               Register
-            </Link>
+            </a>
           </div>
         </div>
       )}

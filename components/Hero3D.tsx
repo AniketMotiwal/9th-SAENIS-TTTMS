@@ -205,7 +205,7 @@ export default function Hero3D() {
             </p>
           </div>
           <p className="text-sm sm:text-base md:text-lg text-gray-300 drop-shadow-lg">
-            🌍 IIT Roorkee, India
+            Indian Institute of Technology, Roorkee · Uttarakhand, India
           </p>
         </div>
       </div>

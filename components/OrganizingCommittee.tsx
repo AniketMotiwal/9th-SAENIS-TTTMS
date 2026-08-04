@@ -2,29 +2,29 @@ import Image from 'next/image';
 
 export default function OrganizingCommittee() {
   return (
-    <section id="organizing" className="py-10 md:py-14 scroll-mt-20">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#ff9a3c] via-[#ffb347] to-[#ffd36b] p-4 sm:p-6 shadow-2xl">
-          
-          {/* Soft glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_55%)]" />
+    <section
+      id="organizing"
+      className="relative py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black scroll-mt-20"
+    >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl" />
+      </div>
 
-          {/* Mandala texture */}
-          <div className="absolute inset-0 opacity-[0.06] bg-mandala-texture bg-cover bg-center" />
-
-          {/* Content */}
-          <div className="relative z-10">
-            <Image
-              src="/Organzing-commitee/1.png"
-              alt="Organising Committee"
-              width={3840}
-              height={2160}
-              quality={100}
-              priority
-              sizes="(max-width: 768px) 100vw, 1024px"
-              className="w-full h-auto object-contain rounded-2xl"
-            />
-          </div>
+      <div className="relative z-10 mx-auto max-w-5xl">
+        {/* Light panel so original dark text + original photo colors stay intact */}
+        <div className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] p-3 sm:p-5 shadow-2xl shadow-cyan-500/10">
+          <Image
+            src="/Organzing-commitee/1.png"
+            alt="Organising Committee — Prof. Akshay Dvivedi, Prof. Varun Sharma, Prof. Amit Choudhary, IIT Roorkee"
+            width={1000}
+            height={500}
+            quality={100}
+            priority
+            unoptimized
+            sizes="(max-width: 768px) 100vw, 1024px"
+            className="w-full h-auto object-contain"
+          />
         </div>
       </div>
     </section>
