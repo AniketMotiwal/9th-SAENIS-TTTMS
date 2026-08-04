@@ -1,13 +1,11 @@
 import Header from '@/components/Header';
-import dynamic from 'next/dynamic';
-const Hero3D = dynamic(() => import('@/components/Hero3D'), { ssr: false });
+import Hero3DDynamic from '@/components/Hero3DDynamic';
 import About from '@/components/About';
 import Theme from '@/components/Theme';
 import Schedule from '@/components/Schedule';
 import OrganizingCommittee from '@/components/OrganizingCommittee';
-
-const AdvisoryBoard = dynamic(() => import('@/components/AdvisoryBoard'), { ssr: false });
-const Patrons = dynamic(() => import('@/components/Patrons'), { ssr: false });
+import AdvisoryBoard from '@/components/AdvisoryBoard';
+import Patrons from '@/components/Patrons';
 import SaeIndiaImageSection from '@/components/SaeIndiaImageSection';
 import Glimpses from '@/components/Glimpses';
 import Venue from '@/components/Venue';
@@ -35,7 +33,7 @@ export default function Home() {
 
         {/* Hero Section */}
         <section id="hero">
-          <Hero3D />
+          <Hero3DDynamic />
         </section>
 
         {/* About Section */}
