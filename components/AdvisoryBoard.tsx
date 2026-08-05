@@ -18,7 +18,7 @@ export default function AdvisoryBoard() {
   ];
 
   return (
-    <section id="advisory" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-black">
+    <section id="advisory" className="section-shell bg-gradient-to-b from-slate-900 to-black">
       <div className="max-w-7xl mx-auto">
         <h2 className="section-title text-center mb-4">Who Should Attend?</h2>
         <p className="text-center text-gray-400 text-lg mb-14 max-w-2xl mx-auto">

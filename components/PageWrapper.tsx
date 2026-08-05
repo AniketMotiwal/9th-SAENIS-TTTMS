@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
-// Dynamically import the heavy 3D loader to avoid server-side bundling
 const LoaderScreen = dynamic(() => import('./LoaderScreen'), { ssr: false });
+
+const LOAD_MS = 3200;
 
 interface PageWrapperProps {
   children: React.ReactNode;
@@ -12,12 +13,14 @@ interface PageWrapperProps {
 
 export default function PageWrapper({ children }: PageWrapperProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Show loader for 5 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+      // Slight delay so fade-out feels buttery
+      requestAnimationFrame(() => setShowContent(true));
+    }, LOAD_MS);
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,7 +28,12 @@ export default function PageWrapper({ children }: PageWrapperProps) {
   return (
     <>
       <LoaderScreen isLoading={isLoading} />
-      <div style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.8s ease-in-out' }}>
+      <div
+        className={`transition-all duration-700 ease-out ${
+          showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+        }`}
+        style={{ visibility: showContent || !isLoading ? 'visible' : 'hidden' }}
+      >
         {children}
       </div>
     </>

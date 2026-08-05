@@ -49,24 +49,24 @@ export default function Header() {
           : 'bg-black/55 backdrop-blur-sm'
       }`}
     >
-      <nav className="w-full px-3 sm:px-5 lg:px-6 xl:px-8 h-[6.5rem] sm:h-[8.5rem] flex lg:grid lg:grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-4 lg:gap-4 xl:gap-6">
+      <nav className="w-full px-3 sm:px-5 lg:px-6 xl:px-8 h-[4.75rem] sm:h-[6.5rem] lg:h-[7.5rem] flex lg:grid lg:grid-cols-[auto_1fr_auto] items-center gap-2 sm:gap-4 lg:gap-3 xl:gap-5">
         {/* Left — IIT logo (flush left on desktop) */}
         <div className="flex shrink-0 justify-start animate-anti-gravity">
-          <div className="relative h-[4.5rem] w-[4.5rem] sm:h-[6.5rem] sm:w-[6.5rem] lg:h-32 lg:w-32">
+          <div className="relative h-14 w-14 sm:h-[5.5rem] sm:w-[5.5rem] lg:h-28 lg:w-28">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iit_logo-eieQN2fUkXi1NU7FlB4FxOBYyZpsn0.webp"
               alt="IIT Roorkee"
               fill
               className="object-contain mix-blend-lighten drop-shadow-[0_0_28px_rgba(34,211,238,0.45)]"
-              sizes="(max-width: 640px) 72px, 128px"
+              sizes="(max-width: 640px) 56px, 112px"
               priority
             />
           </div>
         </div>
 
         {/* Center — navigation fills space between logos */}
-        <div className="hidden lg:flex w-full min-w-0 items-center justify-self-stretch px-2 xl:px-4">
-          <div className="flex w-full flex-nowrap items-center justify-evenly">
+        <div className="hidden lg:flex w-full min-w-0 items-center justify-self-stretch px-1 xl:px-3">
+          <div className="flex w-full min-w-0 flex-wrap items-center justify-center gap-x-0.5 gap-y-1 xl:justify-evenly xl:flex-nowrap">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -108,14 +108,14 @@ export default function Header() {
         </div>
       </nav>
 
-      {isOpen && (
-        <div className="border-t border-cyan-500/20 bg-black/95 backdrop-blur-md lg:hidden">
-          <div className="space-y-1 px-4 py-4">
+        {isOpen && (
+        <div className="max-h-[min(70vh,28rem)] overflow-y-auto border-t border-cyan-500/20 bg-black/95 backdrop-blur-md lg:hidden">
+          <div className="space-y-1 px-3 py-3 sm:px-4 sm:py-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block rounded-lg px-4 py-2.5 transition-colors duration-200 hover:bg-white/5 hover:text-cyan-400 ${
+                className={`block rounded-lg px-3 py-2.5 text-sm transition-colors duration-200 hover:bg-white/5 hover:text-cyan-400 sm:px-4 ${
                   activeSection === link.id
                     ? 'bg-cyan-500/10 text-cyan-300 border-l-2 border-cyan-400'
                     : 'text-gray-200'

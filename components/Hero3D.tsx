@@ -138,13 +138,13 @@ export default function Hero3D() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-gradient-to-b from-black via-slate-900 to-black overflow-hidden">
+    <div className="relative w-full min-h-[100svh] min-h-[100dvh] bg-gradient-to-b from-black via-slate-900 to-black overflow-x-hidden overflow-y-hidden">
       {/* Background animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-cyan-600/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-cyan-500/15 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-purple-500/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 right-1/4 w-56 h-56 sm:w-80 sm:h-80 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-52 h-52 sm:w-72 sm:h-72 bg-cyan-600/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
       </div>
 
       {/* Particle effect layer */}
@@ -166,7 +166,7 @@ export default function Hero3D() {
       </div>
 
       {/* 3D Canvas */}
-      <div ref={canvasRef} className="w-full h-full" style={{ minHeight: '100%' }}>
+      <div ref={canvasRef} className="absolute inset-0 w-full h-full">
         <Canvas 
           gl={{ antialias: true, alpha: true }}
           dpr={isMobile ? 1 : 2}
@@ -185,33 +185,33 @@ export default function Hero3D() {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
-        <div className="text-center px-4 sm:px-6 py-8 sm:py-12 rounded-2xl bg-transparent">
-          <div className="mb-4 text-cyan-400 text-lg sm:text-2xl font-bold tracking-wider">
-            ✨ INTERNATIONAL CONFERENCE ✨
+      <div className="relative z-10 flex min-h-[100svh] min-h-[100dvh] flex-col items-center justify-center px-4 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-32 pointer-events-none">
+        <div className="w-full max-w-5xl text-center">
+          <div className="mb-3 text-cyan-400 text-xs sm:text-lg md:text-2xl font-bold tracking-[0.12em] sm:tracking-wider uppercase">
+            International Conference
           </div>
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black mb-4 text-white drop-shadow-2xl animate-glow-pulse leading-tight">
+          <h1 className="text-[1.85rem] sm:text-5xl md:text-7xl lg:text-8xl font-black mb-3 sm:mb-4 text-white drop-shadow-2xl animate-glow-pulse leading-[1.1] break-words">
             9th SAENIS TTTMS
           </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 drop-shadow-lg leading-tight">
+          <h2 className="text-lg sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 drop-shadow-lg leading-snug pb-1">
             International Conference
           </h2>
-          <p className="text-lg sm:text-2xl md:text-3xl font-bold text-cyan-100 mb-8 drop-shadow-lg max-w-3xl mx-auto tracking-wide leading-relaxed">
+          <p className="text-base sm:text-2xl md:text-3xl font-bold text-cyan-100 mb-5 sm:mb-8 drop-shadow-lg max-w-3xl mx-auto leading-snug px-1">
             Emerging Thermal Technologies
           </p>
-          <div className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500/70 to-purple-500/70 border-2 border-cyan-300 mb-6 backdrop-blur-md shadow-xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 hover:scale-105">
-            <p className="text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-lg">
-              📅 December 3-5, 2026
+          <div className="inline-block max-w-full px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500/70 to-purple-500/70 border border-cyan-300/80 sm:border-2 mb-4 sm:mb-6 backdrop-blur-md shadow-xl shadow-cyan-500/40">
+            <p className="text-base sm:text-2xl md:text-3xl font-black text-white drop-shadow-lg whitespace-nowrap">
+              December 3-5, 2026
             </p>
           </div>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 drop-shadow-lg">
+          <p className="text-xs sm:text-base md:text-lg text-gray-300 drop-shadow-lg leading-relaxed px-2">
             Indian Institute of Technology, Roorkee · Uttarakhand, India
           </p>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 pointer-events-none">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 pointer-events-none flex">
         <div className="flex flex-col items-center gap-2">
           <span className="text-xs sm:text-sm text-gray-400">Scroll to explore</span>
           <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex items-start justify-center p-2 animate-bounce">

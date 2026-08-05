@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className={`${inter.className} font-sans antialiased bg-black text-white`}>
+      <body className={`${inter.className} font-sans antialiased bg-black text-white overflow-x-hidden`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

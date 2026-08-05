@@ -20,7 +20,7 @@ export default function Theme() {
   ];
 
   return (
-    <section id="theme" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-slate-900">
+    <section id="theme" className="section-shell bg-gradient-to-b from-black to-slate-900">
       <div className="max-w-7xl mx-auto">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/3 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />

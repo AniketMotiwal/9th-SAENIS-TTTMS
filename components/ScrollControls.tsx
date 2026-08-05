@@ -28,7 +28,8 @@ export default function ScrollControls() {
   const scrollToSection = (index: number) => {
     const section = document.getElementById(SECTION_IDS[index]);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const top = section.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET + 8;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     }
   };
 
@@ -67,7 +68,7 @@ export default function ScrollControls() {
 
   return (
     <div
-      className={`scroll-controls fixed right-3 sm:right-6 top-1/2 z-40 flex -translate-y-1/2 flex-col overflow-hidden rounded-full border border-cyan-500/30 bg-black/75 shadow-[0_0_24px_rgba(6,182,212,0.2)] backdrop-blur-md transition-all duration-300 ${
+      className={`scroll-controls fixed right-2 sm:right-5 bottom-24 sm:top-1/2 sm:bottom-auto z-40 flex sm:-translate-y-1/2 flex-col overflow-hidden rounded-full border border-cyan-500/30 bg-black/75 shadow-[0_0_24px_rgba(6,182,212,0.2)] backdrop-blur-md transition-all duration-300 ${
         visible ? 'pointer-events-auto translate-x-0 opacity-100' : 'pointer-events-none translate-x-4 opacity-0'
       }`}
       aria-label="Page scroll controls"

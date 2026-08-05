@@ -58,7 +58,7 @@ export default function Home() {
         <SaeIndiaImageSection
           id="mentors"
           title="Mentors"
-          imageSrc="/sareindia/Mentors9th.png?v=2"
+          imageSrc="/sareindia/Mentors9th.png?v=4"
         />
 
         {/* OC Members — 9th TTTMS’26 */}

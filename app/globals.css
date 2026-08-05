@@ -118,12 +118,25 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+  }
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 9rem;
+    }
   }
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -141,7 +154,7 @@
   }
 
   .nav-link-desktop {
-    @apply px-1.5 py-2 text-sm font-semibold tracking-wide text-white lg:px-2 lg:text-sm xl:px-2.5 xl:text-[0.9375rem] 2xl:px-3 2xl:text-base;
+    @apply px-1 py-2 text-xs font-semibold tracking-wide text-white lg:px-1.5 lg:text-[0.8125rem] xl:px-2 xl:text-sm 2xl:px-2.5 2xl:text-[0.9375rem];
   }
 
   .nav-link::after {
@@ -162,11 +175,11 @@
   }
 
   .btn-register {
-    @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-black font-bold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-105;
+    @apply px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-black font-bold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-[1.03] active:scale-[0.98];
   }
 
   .btn-register-desktop {
-    @apply px-3 py-2 text-sm xl:px-4 xl:py-2.5 xl:text-[0.9375rem] 2xl:px-5 2xl:text-base;
+    @apply px-2.5 py-1.5 text-xs xl:px-3.5 xl:py-2 xl:text-sm 2xl:px-4 2xl:text-[0.9375rem];
   }
 
   .btn-register-active {
@@ -174,15 +187,19 @@
   }
 
   .scroll-control-btn {
-    @apply flex h-11 w-11 items-center justify-center text-cyan-400 transition-all duration-200 hover:bg-cyan-500/15 hover:text-cyan-300 active:scale-95 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent sm:h-12 sm:w-12;
+    @apply flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center text-cyan-400 transition-all duration-200 hover:bg-cyan-500/15 hover:text-cyan-300 active:scale-95 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400;
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 leading-tight pb-1 break-words;
+  }
+
+  .section-shell {
+    @apply relative scroll-mt-28 sm:scroll-mt-36 py-14 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8;
   }
 
   .card-dark {
-    @apply bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-lg p-6;
+    @apply bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-lg p-4 sm:p-6;
   }
 }
 

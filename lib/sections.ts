@@ -29,5 +29,5 @@ export const NAV_LINKS: { name: string; href: string; id: SectionId }[] = [
   { name: 'Venue', href: '#venue', id: 'venue' },
 ];
 
-/** Fixed header height — scroll-spy offset */
-export const SCROLL_SPY_OFFSET = 150;
+/** Fixed header height — scroll-spy offset (~compact header + buffer) */
+export const SCROLL_SPY_OFFSET = 120;

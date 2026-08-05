@@ -10,7 +10,7 @@ export default function SaeIndiaImageSection({ id, title, imageSrc }: SaeIndiaIm
   return (
     <section
       id={id}
-      className="relative scroll-mt-36 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-slate-950 to-black"
+      className="section-shell bg-gradient-to-b from-black via-slate-950 to-black"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/4 h-72 w-72 rounded-full bg-cyan-500/5 blur-3xl" />
@@ -33,7 +33,7 @@ export default function SaeIndiaImageSection({ id, title, imageSrc }: SaeIndiaIm
             priority
             unoptimized
             className="h-auto w-full object-contain"
-            sizes="(max-width: 1024px) 100vw, 1024px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 90vw, 1024px"
           />
         </div>
       </div>

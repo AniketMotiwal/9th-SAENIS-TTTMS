@@ -66,7 +66,7 @@ export default function Schedule() {
   ];
 
   return (
-    <section id="schedule" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section id="schedule" className="section-shell bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />

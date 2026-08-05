@@ -4,7 +4,7 @@ export default function OrganizingCommittee() {
   return (
     <section
       id="organizing"
-      className="relative py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black scroll-mt-20"
+      className="section-shell bg-black"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />

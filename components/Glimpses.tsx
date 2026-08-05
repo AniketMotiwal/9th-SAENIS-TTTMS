@@ -4,7 +4,7 @@ export default function Glimpses() {
   return (
     <section
       id="glimpses"
-      className="relative scroll-mt-20 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-slate-950 to-black"
+      className="section-shell bg-gradient-to-b from-black via-slate-950 to-black"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/4 h-72 w-72 rounded-full bg-cyan-500/5 blur-3xl" />

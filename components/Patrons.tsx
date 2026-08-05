@@ -90,7 +90,7 @@ const tiers = [
 
 export default function Patrons() {
   return (
-    <section id="patrons" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-slate-900">
+    <section id="patrons" className="section-shell bg-gradient-to-b from-black to-slate-900">
       <div className="max-w-7xl mx-auto">
         <h2 className="section-title text-center mb-4">Sponsorship Opportunities</h2>
         <p className="text-center text-gray-400 mb-3 max-w-2xl mx-auto">
@@ -121,24 +121,23 @@ export default function Patrons() {
           ))}
         </div>
 
-        <div className="mt-12 text-center card-dark border border-purple-500/30 max-w-2xl mx-auto">
+        <div className="mt-10 sm:mt-12 text-center card-dark border border-purple-500/30 max-w-2xl mx-auto">
           <p className="text-gray-300 text-sm mb-2">Interested in sponsoring?</p>
-          <p className="text-white font-semibold">
+          <p className="text-white font-semibold break-words">
             Contact:{' '}
-            <a href="mailto:Shekhar.Bhangale@maruti.co.in" className="text-cyan-400 hover:underline">
+            <a href="mailto:Shekhar.Bhangale@maruti.co.in" className="text-cyan-400 hover:underline break-all">
               Shekhar.Bhangale@maruti.co.in
             </a>
           </p>
-          <p className="text-gray-400 text-sm mt-1">
-            or{' '}
-            <a href="mailto:s.jaybhay@tatamotors.com" className="text-cyan-400 hover:underline">
+          <div className="mt-2 flex flex-col gap-1.5 text-sm text-gray-400 sm:gap-1">
+            <span className="text-gray-500">or</span>
+            <a href="mailto:s.jaybhay@tatamotors.com" className="text-cyan-400 hover:underline break-all">
               s.jaybhay@tatamotors.com
             </a>
-            {' · '}
-            <a href="mailto:Bijral.Gurpreet@mahindra.com" className="text-cyan-400 hover:underline">
+            <a href="mailto:Bijral.Gurpreet@mahindra.com" className="text-cyan-400 hover:underline break-all">
               Bijral.Gurpreet@mahindra.com
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </section>
