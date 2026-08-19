@@ -12,12 +12,12 @@ export default function Glimpses() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
-        <h2 className="section-title mb-4 text-center">Glimpses from Past Editions</h2>
-        <p className="mb-10 text-center text-gray-400 max-w-2xl mx-auto">
+        <h2 className="section-title mb-3 text-center">Glimpses from Past Editions</h2>
+        <p className="mb-6 text-center text-gray-400 max-w-2xl mx-auto">
           Moments from previous SAENIS TTTMS conferences
         </p>
 
-        <div className="overflow-hidden rounded-2xl border border-cyan-500/25 bg-black/50 p-2 sm:p-3 shadow-2xl shadow-cyan-500/10">
+        <div className="img-cinematic overflow-hidden rounded-2xl border border-cyan-500/25 bg-black/50 p-2 sm:p-3 shadow-2xl shadow-cyan-500/10 transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-cyan-500/20">
           <Image
             src="/glimpses/past-editions.jpg?v=2"
             alt="Glimpses from past SAENIS TTTMS conference editions"

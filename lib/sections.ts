@@ -28,4 +28,4 @@ export const NAV_LINKS: { name: string; short: string; href: string; id: Section
 ];
 
 /** Fixed header height — scroll-spy offset (~compact header + buffer) */
-export const SCROLL_SPY_OFFSET = 120;
+export const SCROLL_SPY_OFFSET = 100;

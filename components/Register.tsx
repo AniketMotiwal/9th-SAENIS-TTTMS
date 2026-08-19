@@ -46,8 +46,8 @@ export default function Register() {
         </div>
 
         <div className="relative z-10">
-          <h2 className="section-title mb-3 sm:mb-4 text-center">Conference Fee</h2>
-          <p className="text-center text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base px-1">
+          <h2 className="section-title mb-3 text-center">Conference Fee</h2>
+          <p className="text-center text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base px-1">
             Join the 9th SAENIS TTTMS International Conference’26. All fees are exclusive of taxes.
           </p>
 
@@ -80,7 +80,7 @@ export default function Register() {
           </div>
 
           {/* Desktop fee table */}
-          <div className="mb-12 sm:mb-16 hidden md:block overflow-x-auto rounded-2xl border border-slate-700 shadow-xl shadow-cyan-500/5">
+          <div className="mb-8 hidden md:block overflow-x-auto rounded-2xl border border-slate-700 shadow-xl shadow-cyan-500/5">
             <table className="w-full min-w-[820px] text-sm text-left">
               <thead>
                 <tr className="bg-gradient-to-r from-cyan-950/80 to-purple-950/80 border-b border-slate-600">
@@ -114,7 +114,7 @@ export default function Register() {
             </table>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div className="space-y-5 sm:space-y-6">
               <div className="card-dark border border-cyan-500/20">
                 <h3 className="text-lg font-bold text-cyan-400 mb-4">What you get</h3>

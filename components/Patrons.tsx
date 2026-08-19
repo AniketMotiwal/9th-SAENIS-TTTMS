@@ -92,11 +92,11 @@ export default function Patrons() {
   return (
     <section id="patrons" className="section-shell bg-gradient-to-b from-black to-slate-900">
       <div className="max-w-7xl mx-auto">
-        <h2 className="section-title text-center mb-4">Sponsorship Opportunities</h2>
-        <p className="text-center text-gray-400 mb-3 max-w-2xl mx-auto">
+        <h2 className="section-title text-center mb-3">Sponsorship Opportunities</h2>
+        <p className="text-center text-gray-400 mb-2 max-w-2xl mx-auto">
           Partner with the 9th SAENIS TTTMS International Conference’26
         </p>
-        <p className="text-center text-cyan-400/80 text-sm mb-14">
+        <p className="text-center text-cyan-400/80 text-sm mb-8">
           All amounts + GST as applicable
         </p>
 
@@ -104,7 +104,7 @@ export default function Patrons() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`group rounded-2xl border ${tier.border} bg-gradient-to-br from-slate-900/90 to-slate-800/60 p-6 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 flex flex-col`}
+              className={`group rounded-2xl border ${tier.border} bg-gradient-to-br from-slate-900/90 to-slate-800/60 p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/15 transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] flex flex-col`}
             >
               <div className={`h-1 w-16 rounded-full bg-gradient-to-r ${tier.accent} mb-5`} />
               <h3 className="text-xl font-bold text-white mb-1">{tier.name}</h3>
@@ -121,7 +121,7 @@ export default function Patrons() {
           ))}
         </div>
 
-        <div className="mt-10 sm:mt-12 text-center card-dark border border-purple-500/30 max-w-2xl mx-auto">
+        <div className="mt-8 text-center card-dark border border-purple-500/30 max-w-2xl mx-auto">
           <p className="text-gray-300 text-sm mb-2">Interested in sponsoring?</p>
           <p className="text-white font-semibold break-words">
             Contact:{' '}

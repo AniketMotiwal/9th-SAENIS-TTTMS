@@ -73,16 +73,16 @@ export default function Schedule() {
         </div>
 
         <div className="relative z-10">
-          <h2 className="section-title text-center mb-4">Event at a Glance</h2>
-          <p className="text-center text-gray-400 text-lg mb-16">
+          <h2 className="section-title text-center mb-3">Event at a Glance</h2>
+          <p className="text-center text-gray-400 text-lg mb-8">
             December 3–5, 2026 · IIT Roorkee
           </p>
 
-          <div className="space-y-10">
+          <div className="space-y-6">
             {days.map((day, dayIndex) => (
               <div
                 key={day.date}
-                className="rounded-2xl border border-slate-700/80 bg-gradient-to-br from-slate-900/90 to-slate-800/50 overflow-hidden"
+                className="rounded-2xl border border-slate-700/80 bg-gradient-to-br from-slate-900/90 to-slate-800/50 overflow-hidden transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 px-6 py-5 border-b border-slate-700/80 bg-black/30">
                   <div className="flex items-center gap-4">

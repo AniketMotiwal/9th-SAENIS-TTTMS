@@ -20,8 +20,8 @@ export default function AdvisoryBoard() {
   return (
     <section id="advisory" className="section-shell bg-gradient-to-b from-slate-900 to-black">
       <div className="max-w-7xl mx-auto">
-        <h2 className="section-title text-center mb-4">Who Should Attend?</h2>
-        <p className="text-center text-gray-400 text-lg mb-14 max-w-2xl mx-auto">
+        <h2 className="section-title text-center mb-3">Who Should Attend?</h2>
+        <p className="text-center text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
           Ideal for leaders and practitioners shaping the future of automotive thermal management
         </p>
 
@@ -29,7 +29,7 @@ export default function AdvisoryBoard() {
           {attendees.map((role, index) => (
             <div
               key={role}
-              className="group flex gap-4 items-start rounded-xl border border-purple-500/30 bg-gradient-to-r from-slate-900/80 to-slate-800/60 p-5 hover:border-purple-400/70 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
+              className="group flex gap-4 items-start rounded-xl border border-purple-500/30 bg-gradient-to-r from-slate-900/80 to-slate-800/60 p-5 hover:-translate-y-1 hover:border-purple-400/70 hover:shadow-lg hover:shadow-purple-500/20 transition-[transform,box-shadow,border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
             >
               <span className="shrink-0 w-9 h-9 rounded-lg bg-purple-500/20 border border-purple-400/40 flex items-center justify-center text-purple-300 font-bold text-sm">
                 {String(index + 1).padStart(2, '0')}

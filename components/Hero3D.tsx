@@ -185,26 +185,26 @@ export default function Hero3D() {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 flex min-h-[100svh] min-h-[100dvh] flex-col items-center justify-center px-4 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-32 pointer-events-none">
+      <div className="relative z-10 flex min-h-[100svh] min-h-[100dvh] flex-col items-center justify-center px-4 pb-14 pt-20 sm:px-6 sm:pb-16 sm:pt-24 pointer-events-none">
         <div className="w-full max-w-5xl text-center">
-          <div className="mb-3 text-cyan-400 text-xs sm:text-lg md:text-2xl font-bold tracking-[0.12em] sm:tracking-wider uppercase">
+          <div className="hero-enter mb-3 text-cyan-400 text-xs sm:text-lg md:text-2xl font-bold tracking-[0.12em] sm:tracking-wider uppercase">
             International Conference
           </div>
-          <h1 className="text-[1.85rem] sm:text-5xl md:text-7xl lg:text-8xl font-black mb-3 sm:mb-4 text-white drop-shadow-2xl animate-glow-pulse leading-[1.1] break-words">
+          <h1 className="hero-enter text-[1.85rem] sm:text-5xl md:text-7xl lg:text-8xl font-black mb-3 sm:mb-4 text-white drop-shadow-2xl leading-[1.1] break-words" style={{ animationDelay: '0.12s' }}>
             9th SAENIS TTTMS
           </h1>
-          <h2 className="text-lg sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 drop-shadow-lg leading-snug pb-1">
+          <h2 className="hero-enter text-lg sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 drop-shadow-lg leading-snug pb-1" style={{ animationDelay: '0.22s' }}>
             International Conference
           </h2>
-          <p className="text-base sm:text-2xl md:text-3xl font-bold text-cyan-100 mb-5 sm:mb-8 drop-shadow-lg max-w-3xl mx-auto leading-snug px-1">
+          <p className="hero-enter text-base sm:text-2xl md:text-3xl font-bold text-cyan-100 mb-5 sm:mb-8 drop-shadow-lg max-w-3xl mx-auto leading-snug px-1" style={{ animationDelay: '0.32s' }}>
             Emerging Thermal Technologies
           </p>
-          <div className="inline-block max-w-full px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500/70 to-purple-500/70 border border-cyan-300/80 sm:border-2 mb-4 sm:mb-6 backdrop-blur-md shadow-xl shadow-cyan-500/40">
+          <div className="hero-enter inline-block max-w-full px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500/70 to-purple-500/70 border border-cyan-300/80 sm:border-2 mb-4 sm:mb-6 backdrop-blur-md shadow-xl shadow-cyan-500/40" style={{ animationDelay: '0.42s' }}>
             <p className="text-base sm:text-2xl md:text-3xl font-black text-white drop-shadow-lg whitespace-nowrap">
               December 3-5, 2026
             </p>
           </div>
-          <p className="text-xs sm:text-base md:text-lg text-gray-300 drop-shadow-lg leading-relaxed px-2">
+          <p className="hero-enter text-xs sm:text-base md:text-lg text-gray-300 drop-shadow-lg leading-relaxed px-2" style={{ animationDelay: '0.52s' }}>
             Indian Institute of Technology, Roorkee · Uttarakhand, India
           </p>
         </div>
@@ -214,7 +214,7 @@ export default function Hero3D() {
       <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 pointer-events-none flex">
         <div className="flex flex-col items-center gap-2">
           <span className="text-xs sm:text-sm text-gray-400">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex items-start justify-center p-2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex items-start justify-center p-2 animate-scroll-hint">
             <div className="w-1 h-2 bg-cyan-400 rounded-full"></div>
           </div>
         </div>

@@ -45,12 +45,12 @@ export default function About() {
         </div>
 
         <div className="relative z-10">
-          <h2 className="section-title text-center mb-4">About the Conference</h2>
-          <p className="text-center text-cyan-400/90 font-semibold tracking-wide mb-12">
+        <h2 className="section-title text-center mb-3">About the Conference</h2>
+          <p className="text-center text-cyan-400/90 font-semibold tracking-wide mb-8">
             SAENIS TTTMS — Think Tank for Thermal Management Systems
           </p>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-start mb-16">
+          <div className="grid lg:grid-cols-2 gap-6 items-start mb-10">
             <div className="space-y-6">
               <div className="card-dark border border-cyan-500/20">
                 <h3 className="text-xl font-bold text-cyan-400 mb-4">Conference Overview</h3>
@@ -111,8 +111,8 @@ export default function About() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-center text-white mb-8">Organizers</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <h3 className="text-2xl font-bold text-center text-white mb-6">Organizers</h3>
+            <div className="grid md:grid-cols-3 gap-5">
               {organizers.map((org) => (
                 <div
                   key={org.name}

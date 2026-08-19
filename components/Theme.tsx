@@ -28,12 +28,12 @@ export default function Theme() {
         </div>
 
         <div className="relative z-10">
-          <h2 className="section-title text-center mb-4">Emerging Thermal Technologies</h2>
-          <p className="text-center text-gray-400 text-lg mb-12 max-w-3xl mx-auto">
+          <h2 className="section-title text-center mb-3">Emerging Thermal Technologies</h2>
+          <p className="text-center text-gray-400 text-lg mb-8 max-w-3xl mx-auto">
             Theme of the 9th SAENIS TTTMS International Conference’26
           </p>
 
-          <div className="card-dark border border-cyan-500/20 mb-12 max-w-5xl mx-auto space-y-5 text-gray-300 leading-relaxed">
+          <div className="card-dark border border-cyan-500/20 mb-8 max-w-5xl mx-auto space-y-4 text-gray-300 leading-relaxed">
             <p>
               India is among the world&apos;s Top 3 automobile markets, with 28.3 million vehicles sold
               and 6.6 million vehicles exported in FY2025–26, reinforcing its position as a global
@@ -62,11 +62,11 @@ export default function Theme() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="text-center p-5 rounded-xl border border-slate-700 bg-slate-900/60"
+                className="text-center p-5 rounded-xl border border-slate-700 bg-slate-900/60 transition-[transform,box-shadow,border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-lg hover:shadow-cyan-500/10"
               >
                 <p className="text-2xl md:text-3xl font-black text-cyan-400 mb-1">{stat.value}</p>
                 <p className="text-gray-400 text-xs md:text-sm leading-snug">{stat.label}</p>
@@ -77,15 +77,15 @@ export default function Theme() {
           <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-3">
             Technical Sessions
           </h3>
-          <p className="text-center text-gray-400 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
             Papers and presentations will span these focus areas across the three-day conference.
           </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {sessions.map((title, index) => (
               <div
                 key={title}
-                className="group relative overflow-hidden rounded-lg border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 bg-gradient-to-br from-slate-900 to-slate-800 p-5"
+                className="group relative overflow-hidden rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/10 transition-[transform,box-shadow,border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] bg-gradient-to-br from-slate-900 to-slate-800 p-5"
               >
                 <span className="text-cyan-500/40 font-mono text-xs font-bold">
                   {String(index + 1).padStart(2, '0')}

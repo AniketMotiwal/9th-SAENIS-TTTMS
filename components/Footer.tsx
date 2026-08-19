@@ -11,8 +11,8 @@ export default function Footer() {
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-14">
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
           <div className="bg-gradient-to-br from-slate-900/80 to-slate-800/60 backdrop-blur border-2 border-cyan-500/50 rounded-2xl p-8 hover:border-cyan-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
             <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-4">
               9th SAENIS TTTMS
@@ -144,16 +144,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="relative border-t-2 border-cyan-500/40 bg-gradient-to-r from-black via-cyan-950/20 to-black px-4 py-8">
+        <div className="relative border-t-2 border-cyan-500/40 bg-gradient-to-r from-black via-cyan-950/20 to-black px-4 py-5">
           <div className="max-w-7xl mx-auto">
             <p className="text-center text-sm font-semibold text-gray-300 mb-2">
               9th SAENIS TTTMS International Conference — Emerging Thermal Technologies
             </p>
-            <p className="text-center text-xs text-gray-500 mb-3">
+            <p className="text-center text-xs text-gray-500">
               © {currentYear} 9th SAENIS TTTMS International Conference. All rights reserved.
-            </p>
-            <p className="text-center text-xs text-cyan-400 font-semibold">
-              Website Design & Development by Aniket Motiwal
             </p>
           </div>
         </div>
