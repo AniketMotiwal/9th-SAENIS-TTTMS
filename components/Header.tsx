@@ -41,63 +41,74 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const closeOnResize = () => {
+      if (window.innerWidth >= 1280) setIsOpen(false);
+    };
+    window.addEventListener('resize', closeOnResize);
+    return () => window.removeEventListener('resize', closeOnResize);
+  }, []);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ${
         isScrolled
           ? 'bg-black/90 backdrop-blur-md border-b border-cyan-500/25 shadow-[0_8px_32px_rgba(0,0,0,0.45)]'
           : 'bg-black/55 backdrop-blur-sm'
       }`}
     >
-      <nav className="w-full px-3 sm:px-5 lg:px-6 xl:px-8 h-[4.75rem] sm:h-[6.5rem] lg:h-[7.5rem] flex lg:grid lg:grid-cols-[auto_1fr_auto] items-center gap-2 sm:gap-4 lg:gap-3 xl:gap-5">
-        {/* Left — IIT logo (flush left on desktop) */}
+      <nav className="mx-auto flex h-[4.5rem] w-full max-w-[100vw] items-center gap-2 overflow-hidden px-3 sm:h-[5.25rem] sm:px-4 xl:grid xl:h-[5.5rem] xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:gap-3 xl:px-4 2xl:h-[6.25rem] 2xl:gap-5 2xl:px-8">
+        {/* Left — IIT logo */}
         <div className="flex shrink-0 justify-start animate-anti-gravity">
-          <div className="relative h-14 w-14 sm:h-[5.5rem] sm:w-[5.5rem] lg:h-28 lg:w-28">
+          <div className="relative h-12 w-12 sm:h-16 sm:w-16 xl:h-[3.75rem] xl:w-[3.75rem] 2xl:h-24 2xl:w-24">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iit_logo-eieQN2fUkXi1NU7FlB4FxOBYyZpsn0.webp"
               alt="IIT Roorkee"
               fill
               className="object-contain mix-blend-lighten drop-shadow-[0_0_28px_rgba(34,211,238,0.45)]"
-              sizes="(max-width: 640px) 56px, 112px"
+              sizes="(max-width: 640px) 48px, (max-width: 1536px) 64px, 96px"
               priority
             />
           </div>
         </div>
 
-        {/* Center — navigation fills space between logos */}
-        <div className="hidden lg:flex w-full min-w-0 items-center justify-self-stretch px-1 xl:px-3">
-          <div className="flex w-full min-w-0 flex-wrap items-center justify-center gap-x-0.5 gap-y-1 xl:justify-evenly xl:flex-nowrap">
+        {/* Center — desktop nav only from xl (MacBook+) so logos never collide */}
+        <div className="hidden min-w-0 items-center xl:flex">
+          <div className="flex w-full min-w-0 flex-nowrap items-center justify-center gap-x-0 2xl:justify-evenly">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link nav-link-desktop whitespace-nowrap ${
+                title={link.name}
+                className={`nav-link nav-link-desktop ${
                   activeSection === link.id ? 'nav-link-active' : ''
                 }`}
                 aria-current={activeSection === link.id ? 'page' : undefined}
               >
-                {link.name}
+                <span className="2xl:hidden">{link.short}</span>
+                <span className="hidden 2xl:inline">{link.name}</span>
               </Link>
             ))}
             <a
               href={REGISTRATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-register btn-register-desktop shrink-0 whitespace-nowrap"
+              className="btn-register btn-register-desktop ml-1 shrink-0 2xl:ml-2"
             >
               Register
             </a>
           </div>
         </div>
 
-        {/* Right — SAEINDIA branding (flush right on desktop) */}
-        <div className="ml-auto lg:ml-0 flex shrink-0 items-center justify-end gap-2 sm:gap-3 justify-self-end">
+        {/* Right — SAEINDIA + hamburger below xl */}
+        <div className="ml-auto flex shrink-0 items-center justify-end gap-2 sm:gap-3 xl:ml-0">
           <SaeIndiaLogo className="animate-anti-gravity-delayed" />
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="rounded-lg p-2 transition-colors duration-200 hover:bg-white/10 lg:hidden"
+            className="rounded-lg p-2 transition-colors duration-200 hover:bg-white/10 xl:hidden"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? (
               <X className="h-6 w-6 text-cyan-400" />
@@ -108,8 +119,8 @@ export default function Header() {
         </div>
       </nav>
 
-        {isOpen && (
-        <div className="max-h-[min(70vh,28rem)] overflow-y-auto border-t border-cyan-500/20 bg-black/95 backdrop-blur-md lg:hidden">
+      {isOpen && (
+        <div className="max-h-[min(70vh,28rem)] overflow-y-auto border-t border-cyan-500/20 bg-black/95 backdrop-blur-md xl:hidden">
           <div className="space-y-1 px-3 py-3 sm:px-4 sm:py-4">
             {NAV_LINKS.map((link) => (
               <Link

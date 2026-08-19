@@ -3,7 +3,6 @@ import Hero3DDynamic from '@/components/Hero3DDynamic';
 import About from '@/components/About';
 import Theme from '@/components/Theme';
 import Schedule from '@/components/Schedule';
-import OrganizingCommittee from '@/components/OrganizingCommittee';
 import AdvisoryBoard from '@/components/AdvisoryBoard';
 import Patrons from '@/components/Patrons';
 import SaeIndiaImageSection from '@/components/SaeIndiaImageSection';
@@ -45,9 +44,6 @@ export default function Home() {
         {/* Schedule Section */}
         <Schedule />
 
-        {/* Organizing Committee Section */}
-        <OrganizingCommittee />
-
         {/* Who Should Attend */}
         <AdvisoryBoard />
 
@@ -58,14 +54,14 @@ export default function Home() {
         <SaeIndiaImageSection
           id="mentors"
           title="Mentors"
-          imageSrc="/sareindia/Mentors9th.png?v=4"
+          imageSrc="/sareindia/Mentors9th.png?v=5"
         />
 
         {/* OC Members — 9th TTTMS’26 */}
         <SaeIndiaImageSection
           id="oc-members"
           title="OC Members"
-          imageSrc="/sareindia/OC-Members-TTTMS26.png?v=1"
+          imageSrc="/sareindia/organzing-commitee.png?v=3"
         />
 
         {/* Glimpses from Past Editions */}

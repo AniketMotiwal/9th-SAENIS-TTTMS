@@ -154,7 +154,7 @@
   }
 
   .nav-link-desktop {
-    @apply px-1 py-2 text-xs font-semibold tracking-wide text-white lg:px-1.5 lg:text-[0.8125rem] xl:px-2 xl:text-sm 2xl:px-2.5 2xl:text-[0.9375rem];
+    @apply shrink-0 whitespace-nowrap px-1 py-1.5 text-[11px] font-semibold tracking-wide text-white xl:px-1.5 xl:text-xs 2xl:px-2.5 2xl:py-2 2xl:text-[0.9375rem];
   }
 
   .nav-link::after {
@@ -179,7 +179,7 @@
   }
 
   .btn-register-desktop {
-    @apply px-2.5 py-1.5 text-xs xl:px-3.5 xl:py-2 xl:text-sm 2xl:px-4 2xl:text-[0.9375rem];
+    @apply px-2.5 py-1.5 text-[11px] xl:px-3 xl:text-xs 2xl:px-4 2xl:py-2 2xl:text-[0.9375rem];
   }
 
   .btn-register-active {
@@ -195,7 +195,7 @@
   }
 
   .section-shell {
-    @apply relative scroll-mt-28 sm:scroll-mt-36 py-14 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8;
+    @apply relative scroll-mt-24 sm:scroll-mt-28 xl:scroll-mt-32 py-14 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8;
   }
 
   .card-dark {
