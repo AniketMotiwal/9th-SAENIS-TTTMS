@@ -1,4 +1,4 @@
-import ZoomableImage from '@/components/ZoomableImage';
+import Image from 'next/image';
 
 type SaeIndiaImageSectionProps = {
   id: string;
@@ -21,18 +21,21 @@ export default function SaeIndiaImageSection({ id, title, imageSrc }: SaeIndiaIm
         <p className="mb-2 text-center text-xs font-bold uppercase tracking-[0.2em] text-cyan-400/90 sm:text-sm">
           SAEINDIA
         </p>
-        <h2 className="section-title mb-3 text-center">{title}</h2>
-        <p className="mb-4 text-center text-sm text-gray-400">
-          Double-click to zoom · scroll to zoom in/out · drag to move
-        </p>
+        <h2 className="section-title mb-4 text-center">{title}</h2>
 
-        <ZoomableImage
-          src={imageSrc}
-          alt={`${title} — 9th SAENIS TTTMS International Conference 2026 (SAEINDIA)`}
-          width={2542}
-          height={2476}
-          sizes="(max-width: 640px) 100vw, (max-width: 1536px) 96vw, 1472px"
-        />
+        <div className="overflow-hidden rounded-2xl border-2 border-cyan-500/35 bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] p-1.5 shadow-2xl shadow-cyan-500/15 sm:p-3">
+          <Image
+            src={imageSrc}
+            alt={`${title} — 9th SAENIS TTTMS International Conference 2026 (SAEINDIA)`}
+            width={2542}
+            height={2476}
+            quality={100}
+            priority
+            unoptimized
+            className="h-auto w-full object-contain"
+            sizes="(max-width: 640px) 100vw, (max-width: 1536px) 96vw, 1472px"
+          />
+        </div>
       </div>
     </section>
   );

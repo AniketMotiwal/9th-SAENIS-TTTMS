@@ -21,7 +21,7 @@ export default function Venue() {
         </p>
 
         {/* Full high-res collage — same layout as brochure/screenshot */}
-        <div className="img-cinematic overflow-hidden rounded-2xl border border-cyan-500/25 bg-white p-2 sm:p-3 shadow-2xl shadow-cyan-500/10 transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-cyan-500/20">
+        <div className="overflow-hidden rounded-2xl border border-cyan-500/25 bg-white p-2 sm:p-3 shadow-2xl shadow-cyan-500/10">
           <Image
             src="/venue/venue-at-a-glance.jpg?v=5"
             alt="Venue at a Glance — IIT Roorkee campus: James Thomason Building, auditorium, aerial view and campus greenery"

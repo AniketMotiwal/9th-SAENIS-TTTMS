@@ -17,7 +17,7 @@ export default function Glimpses() {
           Moments from previous SAENIS TTTMS conferences
         </p>
 
-        <div className="img-cinematic overflow-hidden rounded-2xl border border-cyan-500/25 bg-black/50 p-2 sm:p-3 shadow-2xl shadow-cyan-500/10 transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-cyan-500/20">
+        <div className="overflow-hidden rounded-2xl border border-cyan-500/25 bg-black/50 p-2 sm:p-3 shadow-2xl shadow-cyan-500/10">
           <Image
             src="/glimpses/past-editions.jpg?v=2"
             alt="Glimpses from past SAENIS TTTMS conference editions"
