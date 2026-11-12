@@ -83,12 +83,12 @@ export default function LoaderScreen({ isLoading }: { isLoading: boolean }) {
 
         {/* Titles */}
         <div className="space-y-2 sm:space-y-3">
-          <h1 className="text-2xl font-black leading-tight tracking-tight text-white sm:text-3xl md:text-4xl">
+          <p className="text-2xl font-black leading-tight tracking-tight text-white sm:text-3xl md:text-4xl">
             Emerging Thermal
             <span className="block bg-gradient-to-r from-cyan-300 via-sky-300 to-violet-400 bg-clip-text pb-1 text-transparent">
               Technologies
             </span>
-          </h1>
+          </p>
           <p className="mx-auto max-w-xs text-sm leading-relaxed text-slate-400 sm:max-w-sm sm:text-base">
             International Conference · IIT Roorkee
           </p>

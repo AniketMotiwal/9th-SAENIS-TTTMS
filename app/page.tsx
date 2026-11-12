@@ -18,6 +18,7 @@ export default function Home() {
   return (
     <PageWrapper>
       <main className="relative bg-black text-white overflow-x-hidden">
+        <h1 className="sr-only">9th SAENIS TTTMS International Conference 2026 — Emerging Thermal Technologies, December 3–5, 2026, IIT Roorkee</h1>
         {/* Background animated elements throughout page */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
           <div className="animate-orb absolute top-20 left-1/4 h-96 w-96 rounded-full bg-cyan-500/8 blur-3xl" />

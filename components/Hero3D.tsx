@@ -190,9 +190,9 @@ export default function Hero3D() {
           <div className="hero-enter mb-3 text-cyan-400 text-xs sm:text-lg md:text-2xl font-bold tracking-[0.12em] sm:tracking-wider uppercase">
             International Conference
           </div>
-          <h1 className="hero-enter text-[1.85rem] sm:text-5xl md:text-7xl lg:text-8xl font-black mb-3 sm:mb-4 text-white drop-shadow-2xl leading-[1.1] break-words" style={{ animationDelay: '0.12s' }}>
+          <p className="hero-enter text-[1.85rem] sm:text-5xl md:text-7xl lg:text-8xl font-black mb-3 sm:mb-4 text-white drop-shadow-2xl leading-[1.1] break-words" style={{ animationDelay: '0.12s' }}>
             9th SAENIS TTTMS
-          </h1>
+          </p>
           <h2 className="hero-enter text-lg sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 drop-shadow-lg leading-snug pb-1" style={{ animationDelay: '0.22s' }}>
             International Conference
           </h2>
