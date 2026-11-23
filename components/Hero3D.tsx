@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
+import Countdown from '@/components/Countdown';
 
 function RotatingModel() {
   const groupRef = useRef<THREE.Group>(null);
@@ -185,7 +186,7 @@ export default function Hero3D() {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 flex min-h-[100svh] min-h-[100dvh] flex-col items-center justify-center px-4 pb-14 pt-20 sm:px-6 sm:pb-16 sm:pt-24 pointer-events-none">
+      <div className="relative z-10 flex min-h-[100svh] min-h-[100dvh] flex-col items-center justify-center px-4 pb-24 pt-20 sm:px-6 sm:pb-28 sm:pt-24 pointer-events-none">
         <div className="w-full max-w-5xl text-center">
           <div className="hero-enter mb-3 text-cyan-400 text-xs sm:text-lg md:text-2xl font-bold tracking-[0.12em] sm:tracking-wider uppercase">
             International Conference
@@ -207,6 +208,9 @@ export default function Hero3D() {
           <p className="hero-enter text-xs sm:text-base md:text-lg text-gray-300 drop-shadow-lg leading-relaxed px-2" style={{ animationDelay: '0.52s' }}>
             Indian Institute of Technology, Roorkee · Uttarakhand, India
           </p>
+          <div className="hero-enter mt-6 sm:mt-8 pointer-events-auto" style={{ animationDelay: '0.62s' }}>
+            <Countdown />
+          </div>
         </div>
       </div>
 

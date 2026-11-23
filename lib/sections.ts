@@ -22,7 +22,7 @@ export const NAV_LINKS: { name: string; short: string; href: string; id: Section
   { name: 'Who Should Attend', short: 'Attend', href: '#advisory', id: 'advisory' },
   { name: 'Sponsorship', short: 'Sponsors', href: '#patrons', id: 'patrons' },
   { name: 'Mentors', short: 'Mentors', href: '#mentors', id: 'mentors' },
-  { name: 'OC Members', short: 'OC', href: '#oc-members', id: 'oc-members' },
+  { name: 'Organizing Committee', short: 'OC', href: '#oc-members', id: 'oc-members' },
   { name: 'Glimpses', short: 'Glimpses', href: '#glimpses', id: 'glimpses' },
   { name: 'Venue', short: 'Venue', href: '#venue', id: 'venue' },
 ];
