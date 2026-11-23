@@ -57,14 +57,22 @@ export default function Home() {
         <SaeIndiaImageSection
           id="mentors"
           title="Mentors"
-          imageSrc="/sareindia/Mentors9th.png?v=5"
+          subtitle="Distinguished industry leaders guiding the 9th SAENIS TTTMS International Conference 2026"
+          imageSrc="/sareindia/mentors-9th-tttms26.webp?v=6"
+          fullSrc="/sareindia/mentors-9th-tttms26-full.jpg?v=6"
+          width={2400}
+          height={1860}
         />
 
-        {/* OC Members — 9th TTTMS’26 */}
+        {/* Organizing Committee — TTTMS’26 */}
         <SaeIndiaImageSection
           id="oc-members"
-          title="OC Members"
-          imageSrc="/sareindia/organzing-commitee.png?v=3"
+          title="Organizing Committee"
+          subtitle="The team from industry and academia driving TTTMS’26"
+          imageSrc="/sareindia/organizing-committee-tttms26.webp?v=4"
+          fullSrc="/sareindia/organizing-committee-tttms26-full.jpg?v=4"
+          width={2400}
+          height={2400}
         />
 
         {/* Glimpses from Past Editions */}
