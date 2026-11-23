@@ -5,7 +5,7 @@ import Theme from '@/components/Theme';
 import Schedule from '@/components/Schedule';
 import AdvisoryBoard from '@/components/AdvisoryBoard';
 import Patrons from '@/components/Patrons';
-import { Mentors, OrganizingCommittee } from '@/components/People';
+import SaeIndiaImageSection from '@/components/SaeIndiaImageSection';
 import Glimpses from '@/components/Glimpses';
 import Venue from '@/components/Venue';
 import Register from '@/components/Register';
@@ -54,10 +54,26 @@ export default function Home() {
         <Patrons />
 
         {/* Mentors — 9th SAENIS */}
-        <Mentors />
+        <SaeIndiaImageSection
+          id="mentors"
+          title="Mentors"
+          subtitle="Distinguished industry leaders guiding the 9th SAENIS TTTMS International Conference 2026"
+          imageSrc="/sareindia/mentors-9th-tttms26.webp?v=7"
+          fullSrc="/sareindia/mentors-9th-tttms26-full.jpg?v=7"
+          width={2400}
+          height={1860}
+        />
 
         {/* Organizing Committee — TTTMS’26 */}
-        <OrganizingCommittee />
+        <SaeIndiaImageSection
+          id="oc-members"
+          title="Organizing Committee"
+          subtitle="The team from industry and academia driving TTTMS’26"
+          imageSrc="/sareindia/organizing-committee-tttms26.webp?v=5"
+          fullSrc="/sareindia/organizing-committee-tttms26-full.jpg?v=5"
+          width={2400}
+          height={2400}
+        />
 
         {/* Glimpses from Past Editions */}
         <Glimpses />
