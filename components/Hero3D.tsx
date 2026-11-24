@@ -5,6 +5,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import Countdown from '@/components/Countdown';
+import { MapPin } from 'lucide-react';
 
 function RotatingModel() {
   const groupRef = useRef<THREE.Group>(null);
@@ -205,9 +206,16 @@ export default function Hero3D() {
               December 3-5, 2026
             </p>
           </div>
-          <p className="hero-enter text-xs sm:text-base md:text-lg text-gray-300 drop-shadow-lg leading-relaxed px-2" style={{ animationDelay: '0.52s' }}>
-            Pradeep Kapse Auditorium, Department of Mechanical &amp; Industrial Engineering · IIT Roorkee · Uttarakhand, India
-          </p>
+          <div className="hero-enter flex justify-center px-2" style={{ animationDelay: '0.52s' }}>
+            <div className="inline-flex max-w-full items-center gap-2 sm:gap-3 rounded-2xl sm:rounded-full border-2 border-cyan-400/80 bg-black/75 px-4 py-2 sm:px-6 sm:py-2.5 shadow-[0_0_30px_rgba(34,211,238,0.45)] backdrop-blur-md">
+              <MapPin className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-cyan-300" aria-hidden="true" />
+              <p className="text-xs sm:text-base md:text-lg leading-snug text-left sm:text-center">
+                <span className="font-extrabold text-cyan-300">Pradeep Kapse Auditorium</span>
+                <span className="text-white font-semibold">, Department of Mechanical &amp; Industrial Engineering</span>
+                <span className="text-gray-200"> · IIT Roorkee · Uttarakhand, India</span>
+              </p>
+            </div>
+          </div>
           <div className="hero-enter mt-6 sm:mt-8 pointer-events-auto" style={{ animationDelay: '0.62s' }}>
             <Countdown />
           </div>
