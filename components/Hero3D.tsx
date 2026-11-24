@@ -206,7 +206,7 @@ export default function Hero3D() {
             </p>
           </div>
           <p className="hero-enter text-xs sm:text-base md:text-lg text-gray-300 drop-shadow-lg leading-relaxed px-2" style={{ animationDelay: '0.52s' }}>
-            Pradeep Kapse Auditorium, MIED · IIT Roorkee · Uttarakhand, India
+            Pradeep Kapse Auditorium, Department of Mechanical &amp; Industrial Engineering · IIT Roorkee · Uttarakhand, India
           </p>
           <div className="hero-enter mt-6 sm:mt-8 pointer-events-auto" style={{ animationDelay: '0.62s' }}>
             <Countdown />

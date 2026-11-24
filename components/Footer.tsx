@@ -123,7 +123,7 @@ export default function Footer() {
             <div className="text-center md:text-left">
               <p className="font-semibold text-gray-300 mb-2">Venue</p>
               <p className="text-gray-400">Pradeep Kapse Auditorium</p>
-              <p className="text-gray-400">Dept. of Mechanical &amp; Industrial Engineering</p>
+              <p className="text-gray-400">Department of Mechanical &amp; Industrial Engineering</p>
               <p className="text-gray-400">IIT Roorkee, Uttarakhand, India</p>
             </div>
             <div className="text-center">
