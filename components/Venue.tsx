@@ -13,8 +13,11 @@ export default function Venue() {
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <h2 className="section-title mb-3 text-center">Venue at a Glance</h2>
+        <p className="mb-1 text-center text-white text-lg sm:text-xl font-bold tracking-wide">
+          Pradeep Kapse Auditorium
+        </p>
         <p className="mb-2 text-center text-cyan-400/90 font-semibold tracking-wide">
-          IIT Roorkee, Roorkee, Uttarakhand, India
+          Department of Mechanical &amp; Industrial Engineering, IIT Roorkee, Uttarakhand, India
         </p>
         <p className="mb-6 text-center text-gray-400 max-w-2xl mx-auto">
           Host campus for the 9th SAENIS TTTMS International Conference’26

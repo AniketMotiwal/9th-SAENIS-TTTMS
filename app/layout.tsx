@@ -91,8 +91,9 @@ const eventJsonLd = {
   ...(SITE_URL ? { url: SITE_URL, image: [`${SITE_URL}${ogImage}`] } : {}),
   location: {
     '@type': 'Place',
-    name: 'Indian Institute of Technology Roorkee',
+    name: 'Pradeep Kapse Auditorium, Department of Mechanical and Industrial Engineering, IIT Roorkee',
     address: {
+      streetAddress: 'Department of Mechanical and Industrial Engineering, Indian Institute of Technology Roorkee',
       '@type': 'PostalAddress',
       addressLocality: 'Roorkee',
       addressRegion: 'Uttarakhand',

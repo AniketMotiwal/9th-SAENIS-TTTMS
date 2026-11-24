@@ -122,8 +122,9 @@ export default function Footer() {
           <div className="grid md:grid-cols-3 gap-6 mb-8 text-sm">
             <div className="text-center md:text-left">
               <p className="font-semibold text-gray-300 mb-2">Venue</p>
-              <p className="text-gray-400">IIT Roorkee</p>
-              <p className="text-gray-400">Roorkee, Uttarakhand, India</p>
+              <p className="text-gray-400">Pradeep Kapse Auditorium</p>
+              <p className="text-gray-400">Dept. of Mechanical &amp; Industrial Engineering</p>
+              <p className="text-gray-400">IIT Roorkee, Uttarakhand, India</p>
             </div>
             <div className="text-center">
               <p className="font-semibold text-gray-300 mb-2">Conference Info</p>

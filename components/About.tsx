@@ -86,8 +86,9 @@ export default function About() {
                   </li>
                   <li>
                     <span className="text-gray-500 text-sm uppercase tracking-wider block mb-1">Venue</span>
-                    <span className="text-cyan-400 font-semibold">Indian Institute of Technology, Roorkee</span>
-                    <span className="text-gray-400 block text-sm">Roorkee, Uttarakhand, India</span>
+                    <span className="text-cyan-400 font-semibold block">Pradeep Kapse Auditorium</span>
+                    <span className="text-gray-300 block text-sm">Department of Mechanical &amp; Industrial Engineering</span>
+                    <span className="text-gray-400 block text-sm">IIT Roorkee, Uttarakhand, India</span>
                   </li>
                   <li>
                     <span className="text-gray-500 text-sm uppercase tracking-wider block mb-1">Theme</span>
