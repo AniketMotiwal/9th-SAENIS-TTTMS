@@ -9,6 +9,10 @@ import SaeIndiaImageSection from '@/components/SaeIndiaImageSection';
 import Glimpses from '@/components/Glimpses';
 import Venue from '@/components/Venue';
 import Register from '@/components/Register';
+import ConferenceFee from '@/components/ConferenceFee';
+import ContactUs from '@/components/ContactUs';
+import Sponsors from '@/components/Sponsors';
+import SponsorStrip from '@/components/SponsorStrip';
 import Footer from '@/components/Footer';
 import ScrollControls from '@/components/ScrollControls';
 import PageWrapper from '@/components/PageWrapper';
@@ -17,16 +21,8 @@ import SmoothEffects from '@/components/SmoothEffects';
 export default function Home() {
   return (
     <PageWrapper>
-      <main className="relative bg-black text-white overflow-x-hidden">
+      <main className="relative bg-[#f6f8fc] text-slate-900 overflow-x-hidden">
         <h1 className="sr-only">9th SAENIS TTTMS International Conference 2026 — Emerging Thermal Technologies, December 3–5, 2026, IIT Roorkee</h1>
-        {/* Background animated elements throughout page */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-          <div className="animate-orb absolute top-20 left-1/4 h-96 w-96 rounded-full bg-cyan-500/8 blur-3xl" />
-          <div className="animate-orb-delayed absolute top-1/3 right-1/4 h-80 w-80 rounded-full bg-purple-500/8 blur-3xl" />
-          <div className="animate-orb absolute bottom-1/4 left-1/3 h-96 w-96 rounded-full bg-blue-500/8 blur-3xl" style={{ animationDelay: '4s' }} />
-          <div className="animate-orb-delayed absolute bottom-1/3 right-1/3 h-72 w-72 rounded-full bg-cyan-600/6 blur-3xl" />
-        </div>
-        
         {/* Content wrapper */}
         <div className="relative z-10">
         <Header />
@@ -38,17 +34,23 @@ export default function Home() {
           <Hero3DDynamic />
         </section>
 
+        {/* Sponsor logo strip */}
+        <SponsorStrip />
+
         {/* About Section */}
         <About />
 
         {/* Theme Section */}
         <Theme />
 
-        {/* Schedule Section */}
+        {/* Agenda */}
         <Schedule />
 
         {/* Who Should Attend */}
         <AdvisoryBoard />
+
+        {/* Conference Fee */}
+        <ConferenceFee />
 
         {/* Sponsorship Opportunities */}
         <Patrons />
@@ -83,6 +85,12 @@ export default function Home() {
 
         {/* Register Section */}
         <Register />
+
+        {/* Connect With Us */}
+        <ContactUs />
+
+        {/* Our Sponsors */}
+        <Sponsors />
 
           {/* Footer */}
           <Footer />

@@ -68,8 +68,8 @@ export default function ScrollControls() {
 
   return (
     <div
-      className={`scroll-controls fixed right-2 sm:right-5 bottom-24 sm:top-1/2 sm:bottom-auto z-40 flex sm:-translate-y-1/2 flex-col overflow-hidden rounded-full border border-cyan-500/30 bg-black/75 shadow-[0_0_24px_rgba(6,182,212,0.2)] backdrop-blur-md transition-all duration-300 ${
-        visible ? 'pointer-events-auto translate-x-0 opacity-100' : 'pointer-events-none translate-x-4 opacity-0'
+      className={`scroll-controls fixed right-2 sm:right-5 bottom-24 sm:top-1/2 sm:bottom-auto z-40 flex sm:-translate-y-1/2 flex-col overflow-hidden rounded-full border border-slate-200 bg-white/95 shadow-lg shadow-sky-900/15 backdrop-blur-md transition-all duration-300 ${
+        visible ? 'pointer-events-auto translate-x-0 opacity-100' : 'pointer-events-none opacity-0'
       }`}
       aria-label="Page scroll controls"
     >
@@ -83,7 +83,7 @@ export default function ScrollControls() {
         <ChevronUp className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />
       </button>
 
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
 
       <button
         type="button"

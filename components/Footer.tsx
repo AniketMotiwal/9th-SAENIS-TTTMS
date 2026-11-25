@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-black border-t-2 border-cyan-500/50 overflow-hidden">
+    <footer className="relative bg-navy-950 border-t-4 border-cyan-500 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
@@ -13,7 +13,7 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-14">
         <div className="grid md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-gradient-to-br from-slate-900/80 to-slate-800/60 backdrop-blur border-2 border-cyan-500/50 rounded-2xl p-8 hover:border-cyan-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
+          <div className="bg-gradient-to-br from-navy-900 to-navy-800 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-cyan-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
             <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-4">
               9th SAENIS TTTMS
             </h3>
@@ -34,15 +34,18 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-900/80 to-slate-800/60 backdrop-blur border-2 border-purple-500/50 rounded-2xl p-8 hover:border-purple-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
-            <h4 className="text-xl font-black text-purple-300 mb-6">Quick Navigation</h4>
+          <div className="bg-gradient-to-br from-navy-900 to-navy-800 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-purple-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
+            <h4 className="text-xl font-black text-cyan-300 mb-6">Quick Navigation</h4>
             <ul className="space-y-3">
               {[
                 { href: '#hero', label: 'Home' },
                 { href: '#about', label: 'About' },
-                { href: '#schedule', label: 'Schedule' },
+                { href: '#schedule', label: 'Agenda' },
+                { href: '#fees', label: 'Conference Fee' },
                 { href: '#patrons', label: 'Sponsorship' },
                 { href: '#register', label: 'Register' },
+                { href: '#contact', label: 'Contact' },
+                { href: '#sponsors', label: 'Our Sponsors' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -56,7 +59,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-900/80 to-slate-800/60 backdrop-blur border-2 border-cyan-500/50 rounded-2xl p-8 hover:border-cyan-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
+          <div className="bg-gradient-to-br from-navy-900 to-navy-800 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-cyan-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">
             <h4 className="text-xl font-black text-cyan-300 mb-6">Connect With Us</h4>
             <div className="space-y-4 text-sm">
               <div>
@@ -105,16 +108,22 @@ export default function Footer() {
             <div className="flex items-center justify-center gap-6">
               <div className="relative w-20 h-20">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iit_logo-eieQN2fUkXi1NU7FlB4FxOBYyZpsn0.webp"
+                  src="/organizers/iit-roorkee.png"
                   alt="IIT Roorkee"
                   fill
                   className="object-contain"
                 />
               </div>
               <span className="text-gray-500 text-2xl font-light">×</span>
-              <div className="text-center">
-                <p className="text-cyan-400 font-bold text-lg">SAENIS</p>
-                <p className="text-gray-400 text-xs">TTTMS’26</p>
+              <div className="rounded-xl bg-white px-3 py-2 ring-1 ring-sky-300/50">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/saeindia-northern-logo.png"
+                  alt="SAEINDIA Northern Section"
+                  width={1015}
+                  height={305}
+                  className="h-10 sm:h-14 w-auto"
+                />
               </div>
             </div>
           </div>
@@ -145,7 +154,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="relative border-t-2 border-cyan-500/40 bg-gradient-to-r from-black via-cyan-950/20 to-black px-4 py-5">
+        <div className="relative border-t-2 border-cyan-500/40 bg-navy-950 px-4 py-5">
           <div className="max-w-7xl mx-auto">
             <p className="text-center text-sm font-semibold text-gray-300 mb-2">
               9th SAENIS TTTMS International Conference — Emerging Thermal Technologies

@@ -30,30 +30,26 @@ export default function SaeIndiaImageSection({
   const alt = `${title} — 9th SAENIS TTTMS International Conference 2026 (SAEINDIA)`;
 
   return (
-    <section id={id} className="section-shell bg-gradient-to-b from-black via-slate-950 to-black">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 h-72 w-72 rounded-full bg-cyan-500/5 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-purple-500/5 blur-3xl" />
-      </div>
+    <section id={id} className="section-shell bg-white">
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <p className="mb-2 text-center text-xs font-bold uppercase tracking-[0.2em] text-cyan-400/90 sm:text-sm">
-          SAEINDIA
-        </p>
-        <h2 className="section-title mb-2 text-center">{title}</h2>
+        <div className="text-center">
+          <span className="eyebrow">SAEINDIA · TTTMS’26</span>
+        </div>
+        <h2 className="section-title mt-4 mb-2 text-center">{title}</h2>
         {subtitle ? (
-          <p className="mx-auto mb-6 max-w-2xl text-center text-sm text-slate-400 sm:text-base">{subtitle}</p>
+          <p className="mx-auto mb-6 max-w-2xl text-center text-sm text-slate-600 sm:text-base">{subtitle}</p>
         ) : (
           <div className="mb-6" />
         )}
 
         {/* Glowing frame */}
-        <div className="group relative rounded-3xl bg-gradient-to-br from-cyan-400/60 via-blue-500/40 to-purple-500/60 p-[2px] shadow-[0_0_60px_-15px_rgba(34,211,238,0.45)] transition-shadow duration-500 hover:shadow-[0_0_80px_-10px_rgba(34,211,238,0.6)]">
+        <div className="group relative rounded-3xl bg-gradient-to-br from-navy-900 via-sky-500 to-cyan-400 p-[2px] shadow-xl shadow-sky-900/15 transition-shadow duration-500 hover:shadow-2xl">
           <button
             type="button"
             onClick={() => setOpen(true)}
             aria-label={`Open ${title} in zoom viewer`}
-            className="relative block w-full cursor-zoom-in overflow-hidden rounded-[calc(1.5rem-2px)] bg-slate-950 p-1.5 sm:p-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            className="relative block w-full cursor-zoom-in overflow-hidden rounded-[calc(1.5rem-2px)] bg-white p-1.5 sm:p-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -75,14 +71,14 @@ export default function SaeIndiaImageSection({
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-800 transition hover:bg-sky-100"
           >
             <Maximize2 className="h-4 w-4" /> View full screen
           </button>
           <a
             href={full}
             download
-            className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-300 transition hover:bg-purple-500/20 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-navy-900 bg-navy-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-navy-800"
           >
             <Download className="h-4 w-4" /> Download HD
           </a>

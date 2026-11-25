@@ -53,8 +53,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ${
         isScrolled
-          ? 'bg-black/90 backdrop-blur-md border-b border-cyan-500/25 shadow-[0_8px_32px_rgba(0,0,0,0.45)]'
-          : 'bg-black/55 backdrop-blur-sm'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-[0_8px_30px_rgba(11,42,85,0.12)]'
+          : 'bg-white/90 backdrop-blur-md border-b border-white/40'
       }`}
     >
       <nav className="mx-auto flex h-[4.5rem] w-full max-w-[100vw] items-center gap-2 overflow-hidden px-3 sm:h-[5.25rem] sm:px-4 xl:grid xl:h-[5.5rem] xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:gap-3 xl:px-4 2xl:h-[6.25rem] 2xl:gap-5 2xl:px-8">
@@ -62,10 +62,10 @@ export default function Header() {
         <div className="flex shrink-0 justify-start animate-anti-gravity">
           <div className="relative h-12 w-12 sm:h-16 sm:w-16 xl:h-[3.75rem] xl:w-[3.75rem] 2xl:h-24 2xl:w-24">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iit_logo-eieQN2fUkXi1NU7FlB4FxOBYyZpsn0.webp"
+              src="/organizers/iit-roorkee.png"
               alt="IIT Roorkee"
               fill
-              className="object-contain mix-blend-lighten drop-shadow-[0_0_28px_rgba(34,211,238,0.45)]"
+              className="object-contain"
               sizes="(max-width: 640px) 48px, (max-width: 1536px) 64px, 96px"
               priority
             />
@@ -103,33 +103,41 @@ export default function Header() {
         {/* Right — SAEINDIA + hamburger below xl */}
         <div className="ml-auto flex shrink-0 items-center justify-end gap-2 sm:gap-3 xl:ml-0">
           <SaeIndiaLogo className="animate-anti-gravity-delayed" />
+          <a
+            href={REGISTRATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-register !px-3 !py-2 text-xs sm:!px-4 sm:text-sm xl:hidden"
+          >
+            Register
+          </a>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="rounded-lg p-2 transition-colors duration-200 hover:bg-white/10 xl:hidden"
+            className="rounded-lg p-2 transition-colors duration-200 hover:bg-slate-100 xl:hidden"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
             {isOpen ? (
-              <X className="h-6 w-6 text-cyan-400" />
+              <X className="h-6 w-6 text-navy-900" />
             ) : (
-              <Menu className="h-6 w-6 text-cyan-400" />
+              <Menu className="h-6 w-6 text-navy-900" />
             )}
           </button>
         </div>
       </nav>
 
       {isOpen && (
-        <div className="max-h-[min(70vh,28rem)] overflow-y-auto border-t border-cyan-500/20 bg-black/95 backdrop-blur-md xl:hidden">
+        <div className="max-h-[min(70vh,28rem)] overflow-y-auto border-t border-slate-200 bg-white/98 backdrop-blur-md shadow-lg xl:hidden">
           <div className="space-y-1 px-3 py-3 sm:px-4 sm:py-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block rounded-lg px-3 py-2.5 text-sm transition-colors duration-200 hover:bg-white/5 hover:text-cyan-400 sm:px-4 ${
+                className={`block rounded-lg px-3 py-2.5 text-sm transition-colors duration-200 hover:bg-sky-50 hover:text-sky-700 sm:px-4 ${
                   activeSection === link.id
-                    ? 'bg-cyan-500/10 text-cyan-300 border-l-2 border-cyan-400'
-                    : 'text-gray-200'
+                    ? 'bg-sky-50 text-navy-900 font-semibold border-l-2 border-sky-600'
+                    : 'text-slate-700'
                 }`}
                 onClick={() => setIsOpen(false)}
                 aria-current={activeSection === link.id ? 'page' : undefined}

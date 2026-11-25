@@ -75,7 +75,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#000000',
+  themeColor: '#0b2a55',
 }
 
 const eventJsonLd = {
@@ -119,8 +119,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth dark">
-      <body className={`${inter.className} font-sans antialiased bg-black text-white overflow-x-hidden`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} font-sans antialiased bg-[#f6f8fc] text-slate-900 overflow-x-hidden`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}

@@ -5,7 +5,18 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import Countdown from '@/components/Countdown';
-import { MapPin } from 'lucide-react';
+import { MapPin, CalendarDays, ArrowRight } from 'lucide-react';
+
+const REGISTRATION_URL =
+  'https://saenis.glueup.com/event/9th-saenis-tttms-international-conference-2026-189169/';
+
+const ORGANIZER_LOGOS = [
+  { src: '/organizers/sae-international.png', alt: 'SAE International' },
+  { src: '/organizers/saeindia.png', alt: 'SAEINDIA' },
+  { src: '/saeindia-northern-logo.png', alt: 'SAEINDIA Northern Section' },
+  { src: '/organizers/iit-roorkee.png', alt: 'IIT Roorkee' },
+  { src: '/organizers/tttms.png', alt: 'TTTMS' },
+];
 
 function RotatingModel() {
   const groupRef = useRef<THREE.Group>(null);
@@ -140,13 +151,15 @@ export default function Hero3D() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-[100svh] min-h-[100dvh] bg-gradient-to-b from-black via-slate-900 to-black overflow-x-hidden overflow-y-hidden">
-      {/* Background animated gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-cyan-500/15 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-purple-500/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 right-1/4 w-56 h-56 sm:w-80 sm:h-80 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/3 left-1/3 w-52 h-52 sm:w-72 sm:h-72 bg-cyan-600/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+    <div className="relative w-full min-h-[100svh] min-h-[100dvh] overflow-hidden bg-[radial-gradient(ellipse_at_top,#123a73_0%,#0b2a55_45%,#061733_100%)]">
+      {/* Diagonal teal accents (from the conference poster) */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -right-40 bottom-[-10%] h-[140%] w-40 rotate-[35deg] bg-gradient-to-b from-cyan-400/0 via-cyan-400/40 to-teal-300/0 blur-sm" />
+        <div className="absolute -right-10 bottom-[-20%] h-[140%] w-10 rotate-[35deg] bg-gradient-to-b from-white/0 via-white/30 to-white/0" />
+        <div className="absolute -left-32 top-[-10%] h-[80%] w-24 rotate-[35deg] bg-gradient-to-b from-cyan-400/0 via-cyan-300/25 to-cyan-400/0 blur-sm" />
+        <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(rgba(255,255,255,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.6)_1px,transparent_1px)] bg-[size:48px_48px]" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-cyan-400/20 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-sky-500/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
       </div>
 
       {/* Particle effect layer */}
@@ -154,7 +167,7 @@ export default function Hero3D() {
         {isHydrated && particles.map((particle, i) => (
           <div
             key={i}
-            className="absolute rounded-full bg-cyan-400/20 animate-pulse"
+            className="absolute rounded-full bg-cyan-300/30 animate-pulse"
             style={{
               width: particle.width + 'px',
               height: particle.height + 'px',
@@ -168,8 +181,8 @@ export default function Hero3D() {
       </div>
 
       {/* 3D Canvas */}
-      <div ref={canvasRef} className="absolute inset-0 w-full h-full">
-        <Canvas 
+      <div ref={canvasRef} className="absolute inset-0 w-full h-full opacity-20 sm:opacity-25">
+        <Canvas
           gl={{ antialias: true, alpha: true }}
           dpr={isMobile ? 1 : 2}
           performance={{ min: 0.5, max: 1 }}
@@ -187,48 +200,68 @@ export default function Hero3D() {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 flex min-h-[100svh] min-h-[100dvh] flex-col items-center justify-center px-4 pb-24 pt-20 sm:px-6 sm:pb-28 sm:pt-24 pointer-events-none">
+      <div className="relative z-10 flex min-h-[100svh] min-h-[100dvh] flex-col items-center justify-center px-4 pb-24 pt-24 sm:px-6 sm:pb-28 sm:pt-32 pointer-events-none">
         <div className="w-full max-w-5xl text-center">
-          <div className="hero-enter mb-3 text-cyan-400 text-xs sm:text-lg md:text-2xl font-bold tracking-[0.12em] sm:tracking-wider uppercase">
-            International Conference
+          {/* Organizer logos */}
+          <div className="hero-enter mx-auto mb-6 sm:mb-8 flex max-w-3xl flex-wrap items-center justify-center gap-2 sm:gap-3">
+            {ORGANIZER_LOGOS.map((o) => (
+              <span key={o.alt} className="flex h-11 sm:h-14 items-center rounded-xl bg-white px-2.5 sm:px-3 shadow-lg shadow-black/20">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={o.src} alt={o.alt} className="h-7 sm:h-9 w-auto object-contain" />
+              </span>
+            ))}
           </div>
-          <p className="hero-enter text-[1.85rem] sm:text-5xl md:text-7xl lg:text-8xl font-black mb-3 sm:mb-4 text-white drop-shadow-2xl leading-[1.1] break-words" style={{ animationDelay: '0.12s' }}>
-            9th SAENIS TTTMS
+
+          <div className="hero-enter mx-auto mb-4 flex h-14 w-14 sm:h-20 sm:w-20 items-center justify-center rounded-full border-2 border-cyan-300 bg-navy-950/60 shadow-[0_0_30px_rgba(34,211,238,0.6)]" style={{ animationDelay: '0.08s' }}>
+            <span className="text-2xl sm:text-4xl font-black text-white">9<sup className="text-xs sm:text-base">th</sup></span>
+          </div>
+          <p className="hero-enter text-[2.2rem] sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white drop-shadow-2xl leading-[1.02]" style={{ animationDelay: '0.14s' }}>
+            SAENIS TTTMS
           </p>
-          <h2 className="hero-enter text-lg sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 drop-shadow-lg leading-snug pb-1" style={{ animationDelay: '0.22s' }}>
-            International Conference
+          <h2 className="hero-enter mt-1 text-lg sm:text-3xl md:text-[2.6rem] font-black uppercase tracking-wide text-white/95 leading-tight" style={{ animationDelay: '0.22s' }}>
+            International Conference <span className="text-cyan-300">2026</span>
           </h2>
-          <p className="hero-enter text-base sm:text-2xl md:text-3xl font-bold text-cyan-100 mb-5 sm:mb-8 drop-shadow-lg max-w-3xl mx-auto leading-snug px-1" style={{ animationDelay: '0.32s' }}>
-            Emerging Thermal Technologies
-          </p>
-          <div className="hero-enter inline-block max-w-full px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500/70 to-purple-500/70 border border-cyan-300/80 sm:border-2 mb-4 sm:mb-6 backdrop-blur-md shadow-xl shadow-cyan-500/40" style={{ animationDelay: '0.42s' }}>
-            <p className="text-base sm:text-2xl md:text-3xl font-black text-white drop-shadow-lg whitespace-nowrap">
-              December 3-5, 2026
+
+          <div className="hero-enter mx-auto mt-5 sm:mt-6 mb-5 sm:mb-7 inline-flex max-w-full -skew-x-12 items-center bg-[#fdf8ef] px-5 sm:px-10 py-2 sm:py-3 shadow-xl" style={{ animationDelay: '0.3s' }}>
+            <p className="skew-x-12 text-xs sm:text-lg md:text-xl font-extrabold uppercase tracking-wide text-navy-900">
+              Theme: Emerging Thermal Technologies
             </p>
           </div>
-          <div className="hero-enter flex justify-center px-2" style={{ animationDelay: '0.52s' }}>
-            <div className="inline-flex max-w-full items-center gap-2 sm:gap-3 rounded-2xl sm:rounded-full border-2 border-cyan-400/80 bg-black/75 px-4 py-2 sm:px-6 sm:py-2.5 shadow-[0_0_30px_rgba(34,211,238,0.45)] backdrop-blur-md">
-              <MapPin className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-cyan-300" aria-hidden="true" />
-              <p className="text-xs sm:text-base md:text-lg leading-snug text-left sm:text-center">
-                <span className="font-extrabold text-cyan-300">Pradeep Kapse Auditorium</span>
-                <span className="text-white font-semibold">, Department of Mechanical &amp; Industrial Engineering</span>
-                <span className="text-gray-200"> · IIT Roorkee · Uttarakhand, India</span>
+
+          <div className="hero-enter flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4" style={{ animationDelay: '0.4s' }}>
+            <div className="inline-flex items-center gap-2.5 rounded-2xl border border-cyan-300/60 bg-white/10 px-4 py-2.5 backdrop-blur-md">
+              <CalendarDays className="h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />
+              <p className="text-sm sm:text-lg font-black uppercase tracking-wide text-white whitespace-nowrap">3–5 December, 2026</p>
+            </div>
+            <div className="inline-flex max-w-full items-center gap-2.5 rounded-2xl border border-cyan-300/60 bg-white/10 px-4 py-2.5 backdrop-blur-md">
+              <MapPin className="h-5 w-5 shrink-0 text-cyan-300" aria-hidden="true" />
+              <p className="text-xs sm:text-base leading-snug text-left text-white">
+                <span className="font-extrabold">Pradeep Kapse Auditorium</span>
+                <span className="text-cyan-100"> · MIED, IIT Roorkee</span>
               </p>
             </div>
           </div>
-          <div className="hero-enter mt-6 sm:mt-8 pointer-events-auto" style={{ animationDelay: '0.62s' }}>
+
+          <div className="hero-enter mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-3 pointer-events-auto" style={{ animationDelay: '0.5s' }}>
+            <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-teal-300 px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-black uppercase tracking-wide text-navy-950 shadow-[0_10px_30px_rgba(34,211,238,0.45)] transition-transform hover:scale-105">
+              Register Now <ArrowRight className="h-5 w-5" />
+            </a>
+            <a href="#schedule" className="inline-flex items-center gap-2 rounded-xl border-2 border-white/70 bg-white/5 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide text-white backdrop-blur-md transition-colors hover:bg-white hover:text-navy-900">
+              View Agenda
+            </a>
+          </div>
+
+          <div className="hero-enter mt-7 sm:mt-9 pointer-events-auto" style={{ animationDelay: '0.6s' }}>
             <Countdown />
           </div>
+          <p className="hero-enter mt-5 text-sm sm:text-lg font-black tracking-widest text-cyan-200/90" style={{ animationDelay: '0.7s' }}>#TTTMS2026</p>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 pointer-events-none flex">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs sm:text-sm text-gray-400">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex items-start justify-center p-2 animate-scroll-hint">
-            <div className="w-1 h-2 bg-cyan-400 rounded-full"></div>
-          </div>
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-10 pointer-events-none hidden sm:flex">
+        <div className="w-6 h-10 border-2 border-cyan-300 rounded-full flex items-start justify-center p-2 animate-scroll-hint">
+          <div className="w-1 h-2 bg-cyan-300 rounded-full"></div>
         </div>
       </div>
     </div>
