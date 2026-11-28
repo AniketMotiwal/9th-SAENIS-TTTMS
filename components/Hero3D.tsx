@@ -5,7 +5,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import Countdown from '@/components/Countdown';
-import { MapPin, CalendarDays, ArrowRight } from 'lucide-react';
+import { MapPin, CalendarDays, ArrowRight, Download } from 'lucide-react';
 
 const REGISTRATION_URL =
   'https://saenis.glueup.com/event/9th-saenis-tttms-international-conference-2026-189169/';
@@ -14,8 +14,8 @@ const ORGANIZER_LOGOS = [
   { src: '/organizers/sae-international.png', alt: 'SAE International' },
   { src: '/organizers/saeindia.png', alt: 'SAEINDIA' },
   { src: '/saeindia-northern-logo.png', alt: 'SAEINDIA Northern Section' },
-  { src: '/organizers/iit-roorkee.png', alt: 'IIT Roorkee' },
-  { src: '/organizers/tttms.png', alt: 'TTTMS' },
+  { src: '/organizers/iit-roorkee.png', alt: 'IIT Roorkee', square: true },
+  { src: '/organizers/tttms.png', alt: 'TTTMS', square: true },
 ];
 
 function RotatingModel() {
@@ -205,9 +205,9 @@ export default function Hero3D() {
           {/* Organizer logos */}
           <div className="hero-enter mx-auto mb-6 sm:mb-8 flex max-w-3xl flex-wrap items-center justify-center gap-2 sm:gap-3">
             {ORGANIZER_LOGOS.map((o) => (
-              <span key={o.alt} className="flex h-11 sm:h-14 items-center rounded-xl bg-white px-2.5 sm:px-3 shadow-lg shadow-black/20">
+              <span key={o.alt} className={`flex h-12 sm:h-16 items-center rounded-xl bg-white shadow-lg shadow-black/20 ${o.square ? 'px-1' : 'px-2.5 sm:px-3'}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={o.src} alt={o.alt} className="h-7 sm:h-9 w-auto object-contain" />
+                <img src={o.src} alt={o.alt} className={`${o.square ? 'h-11 sm:h-[3.75rem]' : 'h-7 sm:h-10'} w-auto object-contain`} />
               </span>
             ))}
           </div>
@@ -248,6 +248,15 @@ export default function Hero3D() {
             </a>
             <a href="#schedule" className="inline-flex items-center gap-2 rounded-xl border-2 border-white/70 bg-white/5 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide text-white backdrop-blur-md transition-colors hover:bg-white hover:text-navy-900">
               View Agenda
+            </a>
+          </div>
+
+          <div className="hero-enter mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 pointer-events-auto" style={{ animationDelay: '0.55s' }}>
+            <a href="/agenda-tttms26.pdf" download className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm font-bold text-white ring-1 ring-white/40 backdrop-blur-md transition-colors hover:bg-white hover:text-navy-900">
+              <Download className="h-4 w-4" /> Agenda PDF
+            </a>
+            <a href="/sponsorship-deck-tttms26.pdf" download className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm font-bold text-white ring-1 ring-white/40 backdrop-blur-md transition-colors hover:bg-white hover:text-navy-900">
+              <Download className="h-4 w-4" /> Sponsorship Deck PDF
             </a>
           </div>
 

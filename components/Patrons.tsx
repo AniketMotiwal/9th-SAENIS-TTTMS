@@ -18,6 +18,7 @@ import {
   Layers,
   Check,
   Mail,
+  Download,
 } from 'lucide-react';
 
 type Tier = {
@@ -54,7 +55,7 @@ const tiers: Tier[] = [
       'Company Name on Lanyard',
       'Complimentary Presentation on Technical Topics',
       'Promotional Film of 3–5 minutes in Breaks',
-      'Promotion on “Thank You Sponsors” Panel',
+      'Promotion of Company Name & Logo at Prominent Venue Places via “Thank You Sponsors” Panel',
       'Exclusive bytes for Social Media Marketing',
     ],
   },
@@ -254,6 +255,13 @@ export default function Patrons() {
             9th SAENIS TTTMS International Conference’26
           </p>
           <p className="mt-2 text-sky-700 text-sm font-semibold">All amounts + GST as applicable</p>
+          <a
+            href="/sponsorship-deck-tttms26.pdf"
+            download
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-navy-900 px-5 py-2.5 text-sm font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-navy-800"
+          >
+            <Download className="h-4 w-4" /> Download Sponsorship Deck (PDF)
+          </a>
         </div>
 
         <div className="space-y-6 sm:space-y-8">

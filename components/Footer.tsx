@@ -57,6 +57,19 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <h4 className="text-lg font-black text-cyan-300 mt-8 mb-4">Downloads</h4>
+            <ul className="space-y-3">
+              {[
+                { href: '/agenda-tttms26.pdf', label: 'Agenda PDF' },
+                { href: '/sponsorship-deck-tttms26.pdf', label: 'Sponsorship Deck PDF' },
+              ].map((d) => (
+                <li key={d.href}>
+                  <a href={d.href} download className="text-gray-300 hover:text-cyan-400 transition-colors font-semibold text-sm flex items-center gap-2">
+                    <span>⤓</span> {d.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="bg-gradient-to-br from-navy-900 to-navy-800 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-cyan-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30">

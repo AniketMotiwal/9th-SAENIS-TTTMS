@@ -60,7 +60,7 @@ export default function Sponsors() {
           <p className="mb-6 text-center text-xs font-black uppercase tracking-[0.3em] text-slate-500">Organizers</p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
             {ORGANIZERS.map((o) => (
-              <img key={o.name} src={o.logo} alt={o.name} title={o.name} loading="lazy" className="h-14 sm:h-16 w-auto object-contain" />
+              <img key={o.name} src={o.logo} alt={o.name} title={o.name} loading="lazy" className={`${/iit|tttms/.test(o.logo) ? 'h-20 sm:h-24' : 'h-14 sm:h-16'} w-auto object-contain`} />
             ))}
           </div>
         </div>

@@ -24,6 +24,7 @@ const TYPE: Record<SlotType, { label: string; icon: typeof Clock; dot: string; c
   registration: { label: 'Registration', icon: UserCheck, dot: 'bg-teal-500', chip: 'bg-teal-50 text-teal-700 ring-teal-200' },
   ceremony: { label: 'Ceremony', icon: Award, dot: 'bg-navy-900', chip: 'bg-blue-50 text-navy-900 ring-blue-200' },
   theme: { label: 'Theme Talk', icon: Flame, dot: 'bg-orange-500', chip: 'bg-orange-50 text-orange-700 ring-orange-200' },
+  recap: { label: 'Recap', icon: Clock, dot: 'bg-teal-500', chip: 'bg-teal-50 text-teal-700 ring-teal-200' },
   talk: { label: 'Technical Paper', icon: Mic2, dot: 'bg-sky-500', chip: 'bg-sky-50 text-sky-700 ring-sky-200' },
   panel: { label: 'Panel Discussion', icon: Users, dot: 'bg-violet-500', chip: 'bg-violet-50 text-violet-700 ring-violet-200' },
   sponsor: { label: 'Sponsor Session', icon: Megaphone, dot: 'bg-amber-500', chip: 'bg-amber-50 text-amber-700 ring-amber-200' },
@@ -96,7 +97,7 @@ function SlotCard({ s, no }: { s: Slot; no?: number }) {
         ? 'border-l-orange-500'
         : s.type === 'sponsor'
           ? 'border-l-amber-500'
-          : s.type === 'registration'
+          : s.type === 'registration' || s.type === 'recap'
             ? 'border-l-teal-500'
             : 'border-l-sky-500';
 
